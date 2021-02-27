@@ -19,7 +19,7 @@ const validateLogin = [
   ];
 
 
-router.get('/', validateLogin, restoreUser, (req, res) => {
+router.get('/', restoreUser, (req, res) => {
     const { user } = req;
 
     if (user) {
@@ -29,7 +29,7 @@ router.get('/', validateLogin, restoreUser, (req, res) => {
 });
 
 //login route, needs to be updated for your cradentials later;
-router.post('/', asyncHandler(async (req, res, next) => {
+router.post('/', validateLogin, asyncHandler(async (req, res, next) => {
     const { credential, password } = req.body;
     console.log(credential, password);
     const user = await User.login({ credential, password });
