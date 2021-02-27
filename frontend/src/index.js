@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import './index.css';
 import configureStore from './store';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
-import './index.css';
+import { restoreCSRF, csrfFetch } from './store/csrf';
 
 
 /*
@@ -15,8 +16,15 @@ It should not be exposed in production, be sure this is only set in development.
 const store = configureStore();
 
 if (process.env.NODE_ENV !== 'production') {
+  restoreCSRF();
+
+  window.csrfFetch = csrfFetch;
   window.store = store;
 }
+
+// if (process.env.NODE_ENV !== 'production') {
+//   window.store = store;
+// }
 
 function Root() {
   return (
