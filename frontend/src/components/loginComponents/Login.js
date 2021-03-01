@@ -38,7 +38,7 @@ const Login = () => {
                 <input type='text' onChange={updateCredential} className='input-field'/>
             </label>
             <label className='input-labels'>Password
-                <input type='text' onChange={updatePassword} className='input-field'/>
+                <input type='password' onChange={updatePassword} className='input-field'/>
             </label>
             <button type='submit' className='login-button'>Login</button>
         </form>

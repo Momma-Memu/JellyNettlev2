@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 
 const NavBar = () => {
     const user = useSelector(state => state.session.user);
-    console.log(user)
+
     return (
         <div className='navigation-bar'>
             {user === null ? <LoginModal /> : null}

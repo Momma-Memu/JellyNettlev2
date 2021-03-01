@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import {restoreUser} from './store/session';
-import Login from './components/loginComponents/Login';
 import NavBar from './components/NavBarComponents/NavBar';
+import Landing from './components/landingComponents/Landing';
 
 function App() {
   const dispatch = useDispatch();
@@ -17,7 +17,7 @@ function App() {
     <>
       <NavBar />
       <Switch>
-        {/*<Route path='/login' component={Login} />*/}
+        <Route path='/login' component={Landing} />
       </Switch>
     </>
   );
