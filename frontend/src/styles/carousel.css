@@ -4,7 +4,7 @@
 }
 
 .carousel-container{
-    padding: 20px;
+    padding-top: 20px;
     min-width: 80%;
     height: 355px;
     overflow: hidden;
@@ -21,7 +21,7 @@
 .next-button{
     position: relative;
     bottom: 15%;
-    left: 80%;
+    left: 75%;
     font-size: 30px;
     color: gray;
     transition: all;
@@ -57,9 +57,10 @@
 .next-button-hidden{
     position: relative;
     bottom: 15%;
-    left: 80%;
     font-size: 30px;
-    left: 150%;
+    left: 110%;
+    transition: all;
+    transition-duration: 0.5s;
 }
 
 .prev-button-hidden{
@@ -68,5 +69,7 @@
     transform: rotate(180deg);
     font-size: 30px;
     color: gray;
-    left: -50%;
+    left: -25%;
+    transition: all;
+    transition-duration: 0.5s;
 }

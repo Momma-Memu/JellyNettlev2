@@ -23,12 +23,21 @@ const Carousel = () => {
 
     }
 
+    const hideSlideArrows = () => {
+        const arrow1 = arrowRef1.current;
+        const arrow2 = arrowRef2.current;
+        arrow1.classList.remove('next-button');
+        arrow2.classList.remove('prev-button');
+        arrow1.classList.add('next-button-hidden');
+        arrow2.classList.add('prev-button-hidden');
+    }
+
     return (
         <div className='carousel-wrapper'>
-            <div className='carousel-container' onMouseOver={slideInArrows}>
+            <div className='carousel-container' onMouseOver={slideInArrows} onMouseLeave={hideSlideArrows}>
                 {images}
-                <i className="fas fa-arrow-circle-right next-button-hidden" ref={arrowRef1}></i>
-                <i className="fas fa-arrow-circle-right prev-button-hidden" ref={arrowRef2}></i>
+                <i className="far fa-caret-square-right next-button-hidden" ref={arrowRef1}></i>
+                <i className="far fa-caret-square-right prev-button-hidden" ref={arrowRef2}></i>
             </div>
         </div>
     )
