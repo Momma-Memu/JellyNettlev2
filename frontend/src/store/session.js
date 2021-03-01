@@ -50,7 +50,6 @@ export const loginUser = (credential, password) => async (dispatch) => {
     } else {
         dispatch(failedLogin(data))
     }
-    // return data
 }
 
 export default function reducer(state = { user: null }, action) {

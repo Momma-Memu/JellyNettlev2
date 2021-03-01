@@ -29,11 +29,11 @@ const Login = () => {
     const updateCredential = e => setCredential(e.target.value);
     const updatePassword = e => setPassword(e.target.value);
 
-    const badLoginMessages = headers.map((el, i) => <div key={i} className='form-headers'>{el}</div>)
+    const badLoginMessages = headers.map((el, i) => <li key={i} className='form-headers'>{el}</li>)
 
     return (
         <form onSubmit={handleSubmit} className='login-container'>
-            {badLoginMessages}
+            <ul>{badLoginMessages}</ul>
             <label className='input-labels'> Username or Email
                 <input type='text' onChange={updateCredential} className='input-field'/>
             </label>

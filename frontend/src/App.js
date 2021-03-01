@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-// import * as sessionActions from './store/session';
 import {restoreUser} from './store/session';
 import Login from './components/loginComponents/Login';
+import NavBar from './components/NavBarComponents/NavBar';
 
 function App() {
   const dispatch = useDispatch();
@@ -14,9 +14,12 @@ function App() {
   }, [dispatch])
 
   return (
-    <Switch>
-      <Route path='/login' component={Login} />
-    </Switch>
+    <>
+      <NavBar />
+      <Switch>
+        {/*<Route path='/login' component={Login} />*/}
+      </Switch>
+    </>
   );
 }
 
