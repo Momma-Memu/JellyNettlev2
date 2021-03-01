@@ -10,7 +10,7 @@ const LoginModal = () => {
     }
 
     const hide = (e) => {
-        if(e.target .classList.contains('modal-overlay')) setDisplay(false);
+        if(e.target.classList.contains('modal-overlay')) setDisplay(false);
     }
 
     return (

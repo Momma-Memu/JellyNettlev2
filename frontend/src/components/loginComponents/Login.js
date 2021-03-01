@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import { loginUser } from '../../store/session';
 
 const Login = () => {
@@ -8,12 +7,6 @@ const Login = () => {
     const [password, setPassword] = useState('');
     const [headers, setHeaders] = useState([]);
     const dispatch = useDispatch();
-    const user = useSelector(state => state.session.user);
-    const history = useHistory();
-
-    if(user !== null){
-        history.push('/')
-    }
 
 
     const handleSubmit = (e) => {
