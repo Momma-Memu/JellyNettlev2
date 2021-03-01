@@ -1,11 +1,13 @@
 import React from 'react';
 import LoginModal from '../modals/LoginModal';
+import { useSelector } from 'react-redux';
 
 const NavBar = () => {
-
+    const user = useSelector(state => state.session.user);
+    console.log(user)
     return (
         <div className='navigation-bar'>
-            <LoginModal />
+            {user === null ? <LoginModal /> : null}
         </div>
     )
 }
