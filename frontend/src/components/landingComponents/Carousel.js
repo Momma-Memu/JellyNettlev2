@@ -7,7 +7,8 @@ const Carousel = () => {
 
     useEffect(() => {
         const startingImages = [
-            <div className='div-image1' key={1}></div>,
+            <div className='div-image1' key={1}>
+                <div className='image-banner'>Build your own teams</div></div>,
             <div className='div-image2' key={2}></div>
         ]
         setImages(startingImages);
