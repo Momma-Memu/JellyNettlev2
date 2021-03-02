@@ -17,6 +17,7 @@
 }
 
 .div-image1{
+    position: relative;
     background-image: url('../images/desk-stuff.jpg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -26,9 +27,12 @@
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
+    transition: all;
+    transition-duration: 1s;
 }
 
 .div-image2{
+    position: relative;
     background-image: url('../images/any-system.jpg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -38,7 +42,23 @@
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
+    /* left: -100px; */
+    transition: all;
+    transition-duration: 2s;
 }
+
+.div-image1-rotate-right{
+    left: -100%;
+    transition: all;
+    transition-duration: 1s;
+}
+
+.div-image2-rotate-right{
+    left: -100%;
+    transition: all;
+    transition-duration: 1s;
+}
+
 
 .image-banner{
     display: flex;
