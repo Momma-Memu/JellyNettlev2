@@ -26,6 +26,7 @@ const Login = () => {
 
     return (
         <form onSubmit={handleSubmit} className='login-container'>
+            <div className='logo-div'></div>
             <ul>{badLoginMessages}</ul>
             <label className='input-labels'> Username or Email
                 <input type='text' onChange={updateCredential} className='input-field'/>
