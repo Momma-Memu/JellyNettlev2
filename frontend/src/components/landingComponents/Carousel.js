@@ -35,13 +35,13 @@ const Carousel = () => {
         setImages(startingImages);
     }, [])
 
-    // const rotateRight = () => {
-        //     const copy = images.slice();
-    //     const removed = copy.shift();
-    //     copy.push(removed);
-    //     setImages(copy);
+    const rotateRight = () => {
+            const copy = images.slice();
+        const removed = copy.shift();
+        copy.push(removed);
+        setImages(copy);
 
-    // }
+    }
 
     return (
         <div className='carousel-wrapper' onMouseOver={slideInArrows} onMouseLeave={hideSlideArrows}>
@@ -49,7 +49,7 @@ const Carousel = () => {
                 <div className='carousel-container'>
                     {images}
                 </div>
-            <i className="far fa-caret-square-left next-button-hidden" ref={arrowRef1}></i>
+            <i className="far fa-caret-square-left next-button-hidden" ref={arrowRef1} onClick={rotateRight}></i>
         </div>
     )
 }
