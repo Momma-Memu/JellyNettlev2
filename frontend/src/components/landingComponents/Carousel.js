@@ -27,6 +27,8 @@ const Carousel = () => {
         arrow2.classList.add('prev-button-hidden');
     }
 
+    console.log(images)
+
     useEffect(() => {
         const startingImages = [
             <div className='div-image1' key={1} ref={imageRef1}>
@@ -40,18 +42,16 @@ const Carousel = () => {
     const rotateRight = () => {
         const image1 = imageRef1.current;
         const image2 = imageRef2.current;
-        const amount1 = document.querySelector(".div-image1").clientWidth;
-        const amount2 = document.querySelector(".div-image2").clientWidth;
-        // image1.classList.add('div-image1-rotate-right')
-        // image2.classList.add('div-image2-rotate-right')
-        // setTimeout(() => {
-        //     const copy = images.slice();
-        //     const removed = copy.shift();
-        //     copy.push(removed);
-        //     setImages(copy);
-        //     image1.classList.remove('div-image1-rotate-right')
-        //     image2.classList.remove('div-image2-rotate-right')
-        // }, 1000);
+        image1.classList.add('div-image1-rotate-right')
+        image2.classList.add('div-image2-rotate-right')
+        setTimeout(() => {
+            image2.classList.remove('div-image2-rotate-right')
+            image1.classList.remove('div-image1-rotate-right')
+            const copy = images.slice();
+            const removed = copy.shift();
+            copy.push(removed);
+            setImages(copy);
+        }, 1000);
 
     }
 
