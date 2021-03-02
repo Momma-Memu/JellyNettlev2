@@ -2,7 +2,6 @@ import React, { useEffect, useState, useRef } from 'react'
 
 const Carousel = () => {
     const [images, setImages] = useState([])
-    const [position, setPosition] = useState(0)
     const arrowRef1 = useRef();
     const arrowRef2 = useRef();
     const imageRef1 = useRef();
@@ -28,8 +27,6 @@ const Carousel = () => {
         arrow1.classList.add('next-button-hidden');
         arrow2.classList.add('prev-button-hidden');
     }
-
-    console.log(images)
 
     useEffect(() => {
         const startingImages = [
