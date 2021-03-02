@@ -6,14 +6,14 @@
     height: 100px;
     background: linear-gradient(45deg, rgb(36, 92, 212), rgba(95, 59, 255, 0.657) 70.71%);
     border-radius: 3px;
-    box-shadow: 3px 3px 0px 1px rgba(202, 202, 202, 0.308);
+    box-shadow: 4px 3px 3px 1px rgba(148, 148, 148, 0.308);
 }
 
 .login-nav-button{
     align-self: center;
     background-color: black;
     border-radius: 3px;
-    box-shadow: 3px 3px 0px 1px rgba(95, 59, 255, 0.15);
+    box-shadow: 4px 3px 3px 1px rgba(95, 59, 255, 0.15);
     border-color: black;
     color: white;
     font-size: 15px;

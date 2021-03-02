@@ -5,7 +5,7 @@
     height: 300px;
     width: 500px;
     justify-content: center;
-    box-shadow: 3px 3px 0px 1px rgba(148, 148, 148, 0.308);
+    box-shadow: 4px 3px 3px 1px rgba(148, 148, 148, 0.308);
     border-radius: 4px;
     z-index: 20;
 }

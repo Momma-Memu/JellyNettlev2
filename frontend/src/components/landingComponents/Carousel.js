@@ -5,14 +5,6 @@ const Carousel = () => {
     const arrowRef1 = useRef();
     const arrowRef2 = useRef();
 
-    useEffect(() => {
-        const startingImages = [
-            <div className='div-image1' key={1}>
-                <div className='image-banner'>Build your own teams</div></div>,
-            <div className='div-image2' key={2}></div>
-        ]
-        setImages(startingImages);
-    }, [])
 
     const slideInArrows = () => {
         const arrow1 = arrowRef1.current;
@@ -33,9 +25,27 @@ const Carousel = () => {
         arrow2.classList.add('prev-button-hidden');
     }
 
+    useEffect(() => {
+        const startingImages = [
+            <div className='div-image1' key={1} onMouseOver={slideInArrows} onMouseLeave={hideSlideArrows}>
+                <div className='image-banner'>Build your own teams.</div></div>,
+            // <div className='div-image2' key={2} onMouseOver={slideInArrows} onMouseLeave={hideSlideArrows}>
+            //     <div className='image-banner2'>Find people on your system.</div></div>
+        ]
+        setImages(startingImages);
+    }, [])
+
+    // const rotateRight = () => {
+        //     const copy = images.slice();
+    //     const removed = copy.shift();
+    //     copy.push(removed);
+    //     setImages(copy);
+
+    // }
+
     return (
         <div className='carousel-wrapper'>
-            <div className='carousel-container' onMouseOver={slideInArrows} onMouseLeave={hideSlideArrows}>
+            <div className='carousel-container'>
                 {images}
                 <i className="far fa-caret-square-right next-button-hidden" ref={arrowRef1}></i>
                 <i className="far fa-caret-square-right prev-button-hidden" ref={arrowRef2}></i>
