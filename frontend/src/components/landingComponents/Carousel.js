@@ -29,8 +29,8 @@ const Carousel = () => {
         const startingImages = [
             <div className='div-image1' key={1}>
                 <div className='image-banner'>Build your own teams.</div></div>,
-            // <div className='div-image2' key={2} onMouseOver={slideInArrows} onMouseLeave={hideSlideArrows}>
-            //     <div className='image-banner2'>Find people on your system.</div></div>
+            <div className='div-image2' key={2} onMouseOver={slideInArrows} onMouseLeave={hideSlideArrows}>
+                <div className='image-banner2'>Find people on your system.</div></div>
         ]
         setImages(startingImages);
     }, [])
@@ -44,12 +44,12 @@ const Carousel = () => {
     // }
 
     return (
-        <div className='carousel-wrapper'>
-            <div className='carousel-container' onMouseOver={slideInArrows} onMouseLeave={hideSlideArrows}>
-                {images}
-                <i className="far fa-caret-square-right next-button-hidden" ref={arrowRef1}></i>
-                <i className="far fa-caret-square-right prev-button-hidden" ref={arrowRef2}></i>
-            </div>
+        <div className='carousel-wrapper' onMouseOver={slideInArrows} onMouseLeave={hideSlideArrows}>
+            <i className="far fa-caret-square-right prev-button-hidden" ref={arrowRef2}></i>
+                <div className='carousel-container'>
+                    {images}
+                </div>
+            <i className="far fa-caret-square-left next-button-hidden" ref={arrowRef1}></i>
         </div>
     )
 }
