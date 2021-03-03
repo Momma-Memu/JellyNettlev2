@@ -1,29 +1,29 @@
-.plan-events-container{
+.connect-container{
+    text-align: center;
     margin: 30px;
     padding: 20px;
+    height: 150px;
+    min-width: 150px;
     background-color: rgba(36, 92, 212, 0.5);
     border-radius: 4px;
     box-shadow: 4px 3px 3px 1px rgba(148, 148, 148, 0.308);
-    min-width: 150px;
-    height: 150px;
-    text-align: center;
     transition: all;
     transition-duration: 1s;
 }
 
-.plan-events-container:hover{
+.connect-container:hover{
     transform: scale(1.1);
     transition: all;
     transition-duration: 1s;
 }
 
-.plan-events-header{
+.connect-header{
     color: white;
     font-size: 30px;
     margin-bottom: 30px;
 }
 
-.event-icon{
+.connect-icon{
     font-size: 70px;
      color: white;
 }

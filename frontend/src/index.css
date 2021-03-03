@@ -4,6 +4,9 @@
 @import url('./styles/modal.css');
 @import url('./styles/carousel.css');
 @import url('./styles/plan-events.css');
+@import url('./styles/connect.css');
+@import url('./styles/landing.css');
+@import url('./styles/win.css');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 #root{
