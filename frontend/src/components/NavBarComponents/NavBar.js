@@ -15,7 +15,7 @@ const NavBar = () => {
         } else {
             history.push('/')
         }
-    }, [user])
+    }, [user, history])
 
 
     return (

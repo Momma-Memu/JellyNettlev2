@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import {restoreUser} from './store/session';
@@ -7,10 +7,9 @@ import Landing from './components/landingComponents/Landing';
 
 function App() {
   const dispatch = useDispatch();
-  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    dispatch(restoreUser()).then(() => setIsLoaded(true));
+    dispatch(restoreUser());
   }, [dispatch])
 
   return (
