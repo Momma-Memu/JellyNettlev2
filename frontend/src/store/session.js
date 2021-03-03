@@ -28,15 +28,9 @@ const removeUser = () => {
 export const restoreUser = () => async dispatch => {
     const response = await csrfFetch('/api/session');
     const data = await response.json();
-
-    if(data.id){
-        dispatch(setUser(data));
-    } else {
-        dispatch(removeUser());
-    }
+    dispatch(setUser(data.user));
     return response;
 };
-
 
 export const loginUser = (credential, password) => async (dispatch) => {
     const res = await csrfFetch('/api/session/', {
@@ -61,11 +55,16 @@ export const logout = () => async (dispatch) => {
 };
 
 export default function reducer(state = { user: null }, action) {
+    let newState;
     switch(action.type){
         case LOGIN_USER:
-            return action.payload;
+            newState = Object.assign({}, state)
+            newState.user = action.payload
+            return newState;
         case FAILED_LOGIN:
-            return action.payload
+            newState = Object.assign({}, state)
+            newState.headers = action.payload
+            return newState;
         case REMOVE_USER:
             return { user: null }
         // case ADD_USER:

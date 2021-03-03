@@ -22,6 +22,10 @@
     margin-left: 15px;
 }
 
+.website-title:hover{
+    cursor: default;
+}
+
 .logout-button{
     margin-left: auto;
     margin-right: 15px;

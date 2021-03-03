@@ -33,9 +33,9 @@ const Carousel = () => {
             <div className='div-image1' key={1} ref={imageRef1}>
                 <div className='image-banner'>Build your own teams.</div></div>,
             <div className='div-image2' key={2} ref={imageRef2}>
-                <div className='image-banner2'>Join groups related to your interests.</div></div>,
+                <div className='image-banner2'>Join groups with your interests.</div></div>,
             <div className='div-image3' key={3} ref={imageRef3}>
-                <div className='image-banner2'>Create a commmunity for your system.</div></div>
+                <div className='image-banner2'>Find communities on system.</div></div>
         ]
         setImages(startingImages);
     }, [])

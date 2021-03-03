@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import LoginModal from '../modals/LoginModal';
 import { useSelector } from 'react-redux';
@@ -8,9 +8,14 @@ const NavBar = () => {
     const user = useSelector(state => state.session.user);
     const history = useHistory();
 
-    if(user === null){
-        history.push('/login')
-    }
+
+    useEffect(() => {
+        if(user === null){
+            history.push('/login')
+        } else {
+            history.push('/')
+        }
+    }, [user])
 
 
     return (
