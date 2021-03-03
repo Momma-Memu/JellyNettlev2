@@ -14,14 +14,14 @@ const LoginModal = () => {
     }
 
     return (
-        <div>
+        <>
             <button onClick={reveal} className='login-nav-button'>Login</button>
             { display  ?
                 <div className='modal-overlay' ref={modalRef} onClick={hide}>
                     <Login />
                 </div>
             : null }
-        </div>
+        </>
     )
 }
 

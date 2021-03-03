@@ -52,6 +52,14 @@ export const loginUser = (credential, password) => async (dispatch) => {
     }
 }
 
+export const logout = () => async (dispatch) => {
+    const response = await csrfFetch('/api/session', {
+      method: 'DELETE',
+    });
+    dispatch(removeUser());
+    return response;
+};
+
 export default function reducer(state = { user: null }, action) {
     switch(action.type){
         case LOGIN_USER:
