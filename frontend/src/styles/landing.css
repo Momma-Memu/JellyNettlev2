@@ -1,5 +1,6 @@
 .info-square-container{
     display: flex;
-    justify-content: center;
+    padding: 10px;
+    justify-content: space-around;
     align-items: center;
 }

@@ -1,6 +1,5 @@
 .win-container{
     text-align: center;
-    margin: 30px;
     padding: 20px;
     height: 150px;
     min-width: 150px;
@@ -20,7 +19,7 @@
 .win-header{
     color: white;
     font-size: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .win-icon{
