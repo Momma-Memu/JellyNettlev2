@@ -1,0 +1,30 @@
+.plan-events-container{
+    margin: 30px;
+    padding: 20px;
+    background-color: rgba(36, 92, 212, 0.5);
+    border-radius: 4px;
+    box-shadow: 4px 3px 3px 1px rgba(148, 148, 148, 0.308);
+    max-width: 200px;
+    height: 200px;
+    text-align: center;
+    transition: all;
+    transition-duration: 1s;
+}
+
+.plan-events-container:hover{
+    transform: scale(1.1);
+    transition: all;
+    transition-duration: 1s;
+}
+
+.plan-events-header{
+    color: white;
+    font-size: 30px;
+    margin-bottom: 40px;
+}
+
+.event-icon{
+    font-size: 70px;
+    /* color: rgba(95, 59, 255, 0.726); */
+     color: white;
+}

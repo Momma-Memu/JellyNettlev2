@@ -11,7 +11,7 @@
     border-radius: 3px;
     box-shadow: 4px 3px 3px 1px rgba(148, 148, 148, 0.308);
     width: 90%;
-    height: 355px;
+    height: 400px;
     overflow: hidden;
 }
 
@@ -19,6 +19,7 @@
     position: relative;
     background-image: url('../images/desk-stuff.jpg');
     background-repeat: no-repeat;
+    background-position: center;
     background-size: cover;
     min-width: 100%;
     min-height: 100%;
@@ -41,6 +42,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    background-position: center;
     align-items: center;
     left: 0px;
     transition: all;
@@ -51,6 +53,7 @@
     position: relative;
     background-image: url('../images/community.jpg');
     background-repeat: no-repeat;
+    background-position: center;
     background-size: cover;
     min-width: 100%;
     min-height: 100%;
