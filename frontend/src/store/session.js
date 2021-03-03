@@ -3,6 +3,7 @@ import { csrfFetch } from './csrf';
 const LOGIN_USER = 'LOGIN_USER';
 const FAILED_LOGIN = 'FAILED_LOGIN';
 const REMOVE_USER = 'REMOVE_USER';
+const FAILED_RESTORE = 'FAILED_RESTORE'
 
 const setUser = (user) => {
     return {
@@ -24,11 +25,21 @@ const removeUser = () => {
     }
 }
 
+const failedRestore = () => {
+    return {
+        type: FAILED_RESTORE,
+    }
+}
+
 
 export const restoreUser = () => async dispatch => {
     const response = await csrfFetch('/api/session');
     const data = await response.json();
-    dispatch(setUser(data.user));
+    if(data.user){
+        dispatch(setUser(data.user));
+    } else {
+        dispatch(failedRestore())
+    }
     return response;
 };
 
@@ -61,10 +72,8 @@ export default function reducer(state = { user: null }, action) {
             newState = Object.assign({}, state)
             newState.user = action.payload
             return newState;
-        case FAILED_LOGIN:
-            newState = Object.assign({}, state)
-            newState.headers = action.payload
-            return newState;
+        case FAILED_RESTORE:
+            return state;
         case REMOVE_USER:
             return { user: null }
         // case ADD_USER:
