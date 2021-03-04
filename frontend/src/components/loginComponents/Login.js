@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { loginUser } from '../../store/session';
 
@@ -7,7 +7,11 @@ const Login = () => {
     const [password, setPassword] = useState('');
     const [headers, setHeaders] = useState([]);
     const dispatch = useDispatch();
+    const slideRef = useRef();
 
+    useEffect(() => {
+        slideRef.current.style.left = '25%'
+    }, [])
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -25,7 +29,7 @@ const Login = () => {
     const badLoginMessages = headers.map((el, i) => <li key={i} className='form-headers'>{el}</li>)
 
     return (
-        <form onSubmit={handleSubmit} className='login-container'>
+        <form onSubmit={handleSubmit} className='login-container' ref={slideRef}>
             <div className='logo-div'></div>
             <ul>{badLoginMessages}</ul>
             <label className='input-labels'> Username or Email

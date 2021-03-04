@@ -6,7 +6,7 @@
     width: 100%;
     z-index: 1;
     background-color: rgba(146, 146, 146, 0.308);
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
 }
