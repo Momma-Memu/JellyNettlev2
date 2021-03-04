@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { loginUser } from '../../store/session';
+import Quote from '../../randomData/quotes';
 
 const Login = ({prop}) => {
     const [credential, setCredential] = useState('');
@@ -31,6 +32,7 @@ const Login = ({prop}) => {
     return (
         <form onSubmit={handleSubmit} className='login-container' ref={slideRef}>
             <div className='logo-div'></div>
+            <div className='quote-section'>{Quote()}</div>
             <ul>{badLoginMessages}</ul>
             <label className='input-labels'> Username or Email
                 <input type='text' onChange={updateCredential} className='input-field'/>

@@ -4,7 +4,7 @@ const Win = () => {
 
     return (
         <div className='win-container'>
-            <div className='win-header'>Win</div>
+            <div className='win-header'>Compete</div>
             <i className="fas fa-gamepad win-icon"></i>
         </div>
     )

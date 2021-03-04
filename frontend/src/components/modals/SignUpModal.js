@@ -20,7 +20,7 @@ const SignUpModal = () => {
 
     return (
         <>
-            <button onClick={reveal} className='login-nav-button'>Sign Up</button>
+            <button onClick={reveal} className='sign-up-nav-button'>Sign Up</button>
             { display  ?
                 <div className='modal-overlay' ref={modalRef} onClick={hide}>
                     <SignUp props={childRef} />

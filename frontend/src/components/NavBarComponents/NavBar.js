@@ -23,8 +23,8 @@ const NavBar = () => {
         <div className='navigation-bar'>
             <div className='navbar-logo'></div>
             <div className='website-title'>JellyNettle</div>
-            {user === null ? <LoginModal /> : <Logout />}
             {user === null ? <SignUpModal /> : null}
+            {user === null ? <LoginModal /> : <Logout />}
         </div>
     )
 }

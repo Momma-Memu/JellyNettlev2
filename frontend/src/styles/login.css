@@ -5,7 +5,7 @@
     background-color: white;
     display: flex;
     flex-direction: column;
-    height: 300px;
+    height: 400px;
     max-width: 500px;
     justify-content: center;
     box-shadow: 4px 3px 3px 1px rgba(148, 148, 148, 0.308);
@@ -24,6 +24,8 @@
     margin-left: 20px;
     border-radius: 4px;
     background-size: 65px;
+    margin-bottom: auto;
+    margin-top: 20px;
 }
 
 .input-field{
@@ -48,6 +50,7 @@
 .login-button{
     align-self: center;
     margin-top: 20px;
+    margin-bottom: 20px;
     background-color: black;
     border-radius: 3px;
     border-color: black;
@@ -66,4 +69,9 @@
     transition: all;
     transition-duration: 0.5s;
     cursor: pointer;
+}
+
+.quote-section{
+    padding: 10px;
+    text-align: center;
 }
