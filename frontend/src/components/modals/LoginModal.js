@@ -1,4 +1,4 @@
-import React, { useState, useRef, Children } from 'react';
+import React, { useState, useRef } from 'react';
 import Login from '../loginComponents/Login';
 
 const LoginModal = () => {

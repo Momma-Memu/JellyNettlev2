@@ -7,6 +7,7 @@
 @import url('./styles/connect.css');
 @import url('./styles/landing.css');
 @import url('./styles/win.css');
+@import url('./styles/sign-up.css');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 #root{

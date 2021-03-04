@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import LoginModal from '../modals/LoginModal';
 import { useSelector } from 'react-redux';
 import Logout from './Logout';
+import SignUpModal from '../modals/SignUpModal';
 
 const NavBar = () => {
     const user = useSelector(state => state.session.user);
@@ -23,6 +24,7 @@ const NavBar = () => {
             <div className='navbar-logo'></div>
             <div className='website-title'>JellyNettle</div>
             {user === null ? <LoginModal /> : <Logout />}
+            {user === null ? <SignUpModal /> : null}
         </div>
     )
 }

@@ -1,11 +1,11 @@
-.login-container{
+.sign-up-container{
     position: relative;
     bottom: -30%;
     left: -80%;
     background-color: white;
     display: flex;
     flex-direction: column;
-    height: 300px;
+    height: 400px;
     max-width: 500px;
     justify-content: center;
     box-shadow: 4px 3px 3px 1px rgba(148, 148, 148, 0.308);
@@ -45,7 +45,7 @@
     color: red;
 }
 
-.login-button{
+.sign-up-button{
     align-self: center;
     margin-top: 20px;
     background-color: black;
@@ -59,7 +59,7 @@
     transition-duration: 0.5s;
 }
 
-.login-button:hover{
+.sign-up-button:hover{
     background-color: rgba(0, 0, 0, 0.198);
     border-color: black;
     color: black;
