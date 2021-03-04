@@ -2,12 +2,12 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { loginUser } from '../../store/session';
 
-const Login = () => {
+const Login = ({prop}) => {
     const [credential, setCredential] = useState('');
     const [password, setPassword] = useState('');
     const [headers, setHeaders] = useState([]);
     const dispatch = useDispatch();
-    const slideRef = useRef();
+    const slideRef = prop;
 
     useEffect(() => {
         slideRef.current.style.left = '25%'
