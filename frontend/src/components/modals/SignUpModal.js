@@ -12,10 +12,12 @@ const SignUpModal = () => {
 
 
     const hide = (e) => {
-        childRef.current.style.left = '-80%';
-        setTimeout(() => {
-            if(e.target.classList.contains('modal-overlay')) setDisplay(false);
-        }, 400);
+        if(e.target.classList.contains('modal-overlay')){
+            childRef.current.style.left = '-80%';
+            setTimeout(() => {
+                setDisplay(false);
+            }, 400);
+        }
     }
 
     return (

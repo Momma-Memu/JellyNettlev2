@@ -12,7 +12,6 @@ const SignUp = ({props}) => {
     const slideRef = props;
 
     useEffect(() => {
-        console.log(props)
         slideRef.current.style.left = '25%'
     }, [])
 

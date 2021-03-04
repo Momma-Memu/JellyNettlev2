@@ -18,6 +18,11 @@ const generateGreeting = () => {
         `Hold on to your hat! If you lose it, you'll be injured easily.`,
         'In Russia, game plays you.',
         'Pass into the iris',
+        'Apagando las luces',
+        'Handsome fighters never lose a battle!',
+        `There's always a lighthouse, always a man, always a city...`,
+        'Everything is permitted, Nothing is true.',
+        'It was just me against the world... and the world had it coming',
     ]
 
 
