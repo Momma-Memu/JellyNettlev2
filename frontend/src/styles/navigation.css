@@ -55,10 +55,10 @@
     /* margin-left: auto; */
     margin-right: 15px;
     align-self: center;
-    background-color: black;
+    background-color: rgba(36, 62, 212, 0.582);
     border-radius: 3px;
     box-shadow: 4px 2px 4px 0px rgba(197, 197, 197, 0.527);
-    border-color: black;
+    border: none;
     color: white;
     font-size: 15px;
     width: 70px;
@@ -71,6 +71,7 @@
 .login-nav-button:hover{
     background-color: rgba(197, 197, 197, 0.335);
     border-color: black;
+    border: solid 1px black;
     color: black;
     transition: all;
     transition-duration: 0.5s;
@@ -81,22 +82,22 @@
     margin-left: auto;
     margin-right: 15px;
     align-self: center;
-    background-color: black;
+    background-color: rgba(36, 62, 212, 0.582);
     border-radius: 3px;
     box-shadow: 4px 2px 4px 0px rgba(197, 197, 197, 0.527);
-    border-color: black;
+    border: none;
     color: white;
     font-size: 15px;
     width: 70px;
     height: 30px;
     transition: all;
     transition-duration: 0.5s;
-    /* margin-right: 15px; */
 }
 
 .sign-up-nav-button:hover{
     background-color: rgba(197, 197, 197, 0.335);
     border-color: black;
+    border: solid 1px black;
     color: black;
     transition: all;
     transition-duration: 0.5s;

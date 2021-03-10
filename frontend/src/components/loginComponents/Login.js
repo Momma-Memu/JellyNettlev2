@@ -7,11 +7,13 @@ const Login = ({prop}) => {
     const [credential, setCredential] = useState('');
     const [password, setPassword] = useState('');
     const [headers, setHeaders] = useState([]);
+    const [quote, setQuote] = useState('')
     const dispatch = useDispatch();
     const slideRef = prop;
 
     useEffect(() => {
         slideRef.current.style.left = '25%'
+        setQuote(Quote());
     }, [])
 
     const handleSubmit = (e) => {
@@ -32,7 +34,7 @@ const Login = ({prop}) => {
     return (
         <form onSubmit={handleSubmit} className='login-container' ref={slideRef}>
             <div className='logo-div'></div>
-            <div className='quote-section'>{Quote()}</div>
+            <div className='quote-section'>{quote}</div>
             <ul>{badLoginMessages}</ul>
             <label className='input-labels'> Username or Email
                 <input type='text' onChange={updateCredential} className='input-field'/>
