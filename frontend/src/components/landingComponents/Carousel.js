@@ -70,11 +70,11 @@ const Carousel = () => {
 
     return (
         <div className='carousel-wrapper' onMouseOver={slideInArrows} onMouseLeave={hideSlideArrows}>
-            <i className="far fa-caret-square-right prev-button-hidden" ref={arrowRef2} onClick={rotateLeft}></i>
+            <i className="far fa-caret-square-left prev-button-hidden" ref={arrowRef2} onClick={rotateLeft}></i>
                 <div className='carousel-container'>
                     {images}
                 </div>
-            <i className="far fa-caret-square-left next-button-hidden" ref={arrowRef1} onClick={rotateRight}></i>
+            <i className="far fa-caret-square-right next-button-hidden" ref={arrowRef1} onClick={rotateRight}></i>
         </div>
     )
 }
