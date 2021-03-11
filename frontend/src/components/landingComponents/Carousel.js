@@ -38,6 +38,12 @@ const Carousel = () => {
                 <div className='image-banner2'>Find people on your system.</div></div>
         ]
         setImages(startingImages);
+
+        const interval = setInterval(() => {
+            rotateRight();
+        }, 7000);
+
+        return () => clearInterval(interval); // clear interval on unmount
     }, [])
 
     const rotateRight = () => {

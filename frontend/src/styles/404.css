@@ -1,0 +1,31 @@
+.header-404{
+    margin-top: 30px;
+    padding: 30px;
+    text-align: center;
+    font-size: 50px;
+    background-color: rgba(36, 92, 212, 0.5);
+    box-shadow: 4px 3px 3px 1px rgba(148, 148, 148, 0.308);
+    color: white;
+    border-radius: 3px;
+    border: none;
+}
+
+.jelly-gif{
+    height: 300px;
+    width: 100%;
+    background-image: url('../images/404jelly.gif');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.footer-404{
+    padding: 30px;
+    text-align: center;
+    font-size: 50px;
+    background-color: rgba(36, 92, 212, 0.5);
+    box-shadow: 4px 3px 3px 1px rgba(148, 148, 148, 0.308);
+    color: white;
+    border-radius: 3px;
+    border: none;
+}
