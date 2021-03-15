@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useDispatch } from 'react-redux';
-import { loginUser } from '../../store/session';
+import { signUp } from '../../store/session';
 
 const SignUp = ({props}) => {
     const [userName, setUsername] = useState('');
@@ -16,13 +16,17 @@ const SignUp = ({props}) => {
     }, [])
 
     const handleSubmit = (e) => {
-        // e.preventDefault();
-        // dispatch(loginUser(credential, password))
-        //     .catch(async (res) => {
-        //         const data = await res.json()
-        //         if(data && data.errors) setHeaders(data.errors)
-        //         console.log(data);
-        //     })
+        if(confirmPassword !== password){
+            setHeaders(['Passwords do not match.'])
+            return;
+        }
+        e.preventDefault();
+        dispatch(signUp(password, email, userName))
+            .catch(async (res) => {
+                const data = await res.json()
+                if(data && data.errors) setHeaders(data.errors)
+                console.log(data);
+            })
     };
 
     const updateUsername = e => setUsername(e.target.value);
