@@ -1,0 +1,15 @@
+.details-div{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    position: relative;
+    background-color: rgb(154, 212, 193);
+    color: white;
+    border-radius: 3px;
+    top: -5%;
+    z-index: -1;
+    width: 150px;
+    height: 60px;
+    transition: top;
+    transition-duration: 1s;
+}

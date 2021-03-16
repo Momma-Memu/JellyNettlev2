@@ -23,6 +23,7 @@ const generateGreeting = () => {
         `There's always a lighthouse, always a man, always a city...`,
         'Everything is permitted, Nothing is true.',
         'It was just me against the world... and the world had it coming',
+        'Do a barrel roll!'
     ]
 
 

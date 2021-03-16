@@ -14,14 +14,14 @@ const Login = ({prop}) => {
     useEffect(() => {
         slideRef.current.style.left = '25%'
         setQuote(Quote());
-    }, [])
+    }, [slideRef])
 
     const handleSubmit = (e) => {
         e.preventDefault();
         dispatch(loginUser(credential, password))
             .catch(async (res) => {
                 const data = await res.json()
-                if(data && data.errors) setHeaders(data.errors)
+                if(data && data.errors) setHeaders(data.errors.filter(el => el !== 'Invalid value'))
                 console.log(data);
             })
     };

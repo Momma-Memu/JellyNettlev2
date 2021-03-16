@@ -1,6 +1,7 @@
 import Carousel from './Carousel';
 import PlanEvents from './PlanEvents';
 import Connect from './Connect';
+import About from './About';
 import Win from './Win';
 import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
@@ -26,6 +27,7 @@ const Landing = () => {
                 <Connect />
                 <Win />
             </div>
+            <About />
         </>
     )
 }

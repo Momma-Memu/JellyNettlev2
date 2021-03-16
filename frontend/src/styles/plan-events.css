@@ -1,19 +1,16 @@
 .plan-events-container{
     padding: 20px;
-    background-color: rgba(36, 92, 212, 0.5);
+    background-color: rgb(142, 170, 231);
     border-radius: 4px;
     box-shadow: 4px 3px 3px 1px rgba(148, 148, 148, 0.308);
     min-width: 150px;
     height: 150px;
     text-align: center;
-    transition: all;
-    transition-duration: 1s;
+    align-items: center;
 }
 
 .plan-events-container:hover{
-    transform: scale(1.1);
-    transition: all;
-    transition-duration: 1s;
+    cursor: pointer;
 }
 
 .plan-events-header{

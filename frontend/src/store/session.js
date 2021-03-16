@@ -4,7 +4,6 @@ const LOGIN_USER = 'LOGIN_USER';
 const FAILED_LOGIN = 'FAILED_LOGIN';
 const REMOVE_USER = 'REMOVE_USER';
 const FAILED_RESTORE = 'FAILED_RESTORE';
-const ADD_USER = 'ADD_USER';
 
 const setUser = (user) => {
     return {
@@ -72,6 +71,11 @@ export const signUp = (password, email, username) => async (dispatch) => {
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({password, email, username})
     })
+    if(res.ok){
+        const data = await res.json();
+        console.log(data)
+        dispatch(setUser(data))
+    }
 }
 
 export default function reducer(state = { user: null }, action) {
@@ -86,8 +90,6 @@ export default function reducer(state = { user: null }, action) {
             return state;
         case REMOVE_USER:
             return { user: null }
-        case ADD_USER:
-            return action.details
         default:
             return state;
     }

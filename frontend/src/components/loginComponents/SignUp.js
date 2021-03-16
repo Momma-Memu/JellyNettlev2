@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { signUp } from '../../store/session';
 
@@ -13,7 +13,7 @@ const SignUp = ({props}) => {
 
     useEffect(() => {
         slideRef.current.style.left = '25%'
-    }, [])
+    }, [slideRef])
 
     const handleSubmit = (e) => {
         if(confirmPassword !== password){
@@ -24,7 +24,7 @@ const SignUp = ({props}) => {
         dispatch(signUp(password, email, userName))
             .catch(async (res) => {
                 const data = await res.json()
-                if(data && data.errors) setHeaders(data.errors)
+                if(data && data.errors) setHeaders(data.errors.filter(el => el !== 'Invalid value'))
                 console.log(data);
             })
     };
