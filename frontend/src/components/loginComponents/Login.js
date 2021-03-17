@@ -37,10 +37,10 @@ const Login = ({prop}) => {
             <div className='quote-section'>{quote}</div>
             <ul>{badLoginMessages}</ul>
             <label className='input-labels'> Username or Email
-                <input type='text' onChange={updateCredential} className='input-field'/>
+                <input type='text' value={credential} onChange={updateCredential} className='input-field'/>
             </label>
             <label className='input-labels'>Password
-                <input type='password' onChange={updatePassword} className='input-field'/>
+                <input type='password' value={password} onChange={updatePassword} className='input-field'/>
             </label>
             <button type='submit' className='login-button'>Login</button>
         </form>

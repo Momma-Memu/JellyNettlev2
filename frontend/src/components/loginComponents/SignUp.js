@@ -46,16 +46,16 @@ const SignUp = ({props}) => {
             <div className='logo-div'></div>
             <ul>{badSignUpMessages}</ul>
             <label className='input-labels'> Username
-                <input type='text' onChange={updateUsername} className='input-field'/>
+                <input type='text' value={userName} onChange={updateUsername} className='input-field'/>
             </label>
             <label className='input-labels'> Email
-                <input type='text' onChange={updateEmail} className='input-field'/>
+                <input type='text' value={email} onChange={updateEmail} className='input-field'/>
             </label>
             <label className='input-labels'>Password
-                <input type='password' onChange={updatePassword} className='input-field'/>
+                <input type='password' value={password} onChange={updatePassword} className='input-field'/>
             </label>
             <label className='input-labels'>Confirm Password
-                <input type='password' onChange={updateConfirmPassword} className='input-field'/>
+                <input type='password' value={confirmPassword} onChange={updateConfirmPassword} className='input-field'/>
             </label>
             <button type='submit' className='login-button'>Sign Up</button>
         </form>
