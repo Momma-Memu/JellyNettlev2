@@ -8,17 +8,21 @@ const SignUp = ({props}) => {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [headers, setHeaders] = useState([]);
+    const [scrollVal, setScrollVal] = useState(0)
     const dispatch = useDispatch();
     const slideRef = props.childRef;
-    console.log(slideRef)
 
     useEffect(() => {
-        if(props.position){
+        document.body.onscroll = () => setScrollVal(document.scrollingElement.scrollTop);
+
+        if(props.position && scrollVal >= 320){
             slideRef.current.style.left = props.position;
-        } else {
+        }
+        if(!props.position){
             slideRef.current.style.left = '25%';
         }
-    }, [slideRef])
+    }, [slideRef, props.position, scrollVal])
+    // console.log(scrollVal)
 
     const handleSubmit = (e) => {
         if(confirmPassword !== password){
@@ -30,7 +34,7 @@ const SignUp = ({props}) => {
             .catch(async (res) => {
                 const data = await res.json()
                 if(data && data.errors) setHeaders(data.errors.filter(el => el !== 'Invalid value'))
-                console.log(data);
+
             })
     };
 
