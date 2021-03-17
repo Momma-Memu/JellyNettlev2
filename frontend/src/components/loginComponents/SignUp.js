@@ -9,10 +9,15 @@ const SignUp = ({props}) => {
     const [confirmPassword, setConfirmPassword] = useState('');
     const [headers, setHeaders] = useState([]);
     const dispatch = useDispatch();
-    const slideRef = props;
+    const slideRef = props.childRef;
+    console.log(slideRef)
 
     useEffect(() => {
-        slideRef.current.style.left = '25%'
+        if(props.position){
+            slideRef.current.style.left = props.position;
+        } else {
+            slideRef.current.style.left = '25%';
+        }
     }, [slideRef])
 
     const handleSubmit = (e) => {

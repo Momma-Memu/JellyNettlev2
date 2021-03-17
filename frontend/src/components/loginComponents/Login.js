@@ -9,7 +9,7 @@ const Login = ({prop}) => {
     const [headers, setHeaders] = useState([]);
     const [quote, setQuote] = useState('')
     const dispatch = useDispatch();
-    const slideRef = prop;
+    const slideRef = prop.childRef;
 
     useEffect(() => {
         slideRef.current.style.left = '25%'

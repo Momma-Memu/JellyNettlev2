@@ -1,6 +1,10 @@
 .carousel-wrapper{
     display: flex;
     justify-content: center;
+    margin-top: 15px;
+    align-content: center;
+    width: auto;
+    background-color: rgba(195, 211, 245, 0.664);
     align-items: center;
     padding: 10px;
     overflow: hidden;
@@ -8,7 +12,7 @@
 
 .carousel-container{
     display: flex;
-    margin-top: 20px;
+    margin: 20px;
     border-radius: 3px;
     box-shadow: 4px 3px 3px 1px rgba(148, 148, 148, 0.308);
     width: 90%;

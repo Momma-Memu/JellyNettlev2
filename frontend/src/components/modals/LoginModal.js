@@ -24,7 +24,7 @@ const LoginModal = () => {
             <button onClick={reveal} className='login-nav-button'>Login</button>
             { display  ?
                 <div className='modal-overlay' ref={modalRef} onClick={hide}>
-                    <Login prop={childRef}/>
+                    <Login prop={{childRef}}/>
                 </div>
             : null }
         </>
