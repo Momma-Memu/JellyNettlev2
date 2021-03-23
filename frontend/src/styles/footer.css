@@ -1,0 +1,28 @@
+.footer-box{
+    margin-top: 150px;
+    background-color: rgb(123, 148, 201);
+    height: 200px;
+    padding: 20px;
+    padding-bottom: 30px;
+}
+
+.footer-header-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 200px;
+    height: inherit;
+    padding: 10px;
+    height: 200px;
+}
+
+.footer-header-links{
+    color: white;
+    font-weight: 500;
+}
+
+.icon{
+    margin-right: 5px;
+    margin-left: 5%;
+    font-size: 27px;
+}
