@@ -1,6 +1,5 @@
 .any-system{
     display: flex;
-    /* align-items: flex-end; */
     padding: 25px;
     margin-top: 60px;
     background-color: rgba(195, 211, 245, 0.664);
@@ -9,6 +8,7 @@
 .demo-box{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     margin-left: 20%;
 }
@@ -21,7 +21,7 @@
 .demo-button{
     background-color: rgb(142, 170, 231);
     border-radius: 3px;
-    box-shadow: 4px 2px 4px 0px rgba(197, 197, 197, 0.527);
+    box-shadow: 4px 2px 4px 0px rgba(197, 197, 197, 0.671);
     border: none;
     color: white;
     font-size: 25px;
@@ -32,12 +32,21 @@
 }
 
 .demo-button:hover{
-    /* background-color: rgba(231, 231, 231, 0.335);
-    border: solid 1px black; */
-    /* color: white; */
     width: 140px;
     height: 65px;
     transition: all;
     transition-duration: 0.5s;
     cursor: pointer;
+}
+
+.game-dude-background{
+    position: relative;
+    background-image: url('../images/game-dude.png');
+    background-position: center;
+    background-size: cover;
+    width: 350px;
+    height: 300px;
+    border-radius: 4px;
+    box-shadow: 4px 2px 4px 0px rgba(197, 197, 197, 0.671);
+    z-index: 1;
 }

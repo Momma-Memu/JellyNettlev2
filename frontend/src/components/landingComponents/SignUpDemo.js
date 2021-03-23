@@ -19,6 +19,7 @@ const SignUpDemo = () => {
             <div className='demo-box'>
                 <h2 className='demo-header'>Want to just try it out?</h2>
                 <button className='demo-button' onClick={demoLogin}>Demo</button>
+                <div className='game-dude-background' />
             </div>
         </div>
     )
