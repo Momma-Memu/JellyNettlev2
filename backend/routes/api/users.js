@@ -6,7 +6,6 @@ const { handleValidationErrors } = require('../../utils/validation');
 const { setTokenCookie, requireAuth, restoreUser } = require('../../utils/auth');
 const { User } = require('../../db/models');
 
-
 const validateSignup = [
     check('email')
       .exists({ checkFalsy: true })
@@ -24,16 +23,17 @@ const validateSignup = [
       .exists({ checkFalsy: true })
       .isLength({ min: 6 })
       .withMessage('Password must be 6 characters or more.'),
-    check('confirmPassword')
-      .exists({checkFalsy: true})
-      .equals('password')
-      .withMessage('Password and Confirm Password must match exactly.'),
+    check('confirmPassword').custom((value, { req }) => {
+      if(value !== req.body.password) {
+        throw new Error('Password and Confirm Password must match exactly.')
+      }
+    }),
     handleValidationErrors,
   ];
 
 
 router.post('/', validateSignup, asyncHandler(async (req, res) => {
-    const { email, password, username, confirmPassword } = req.body;
+    const { email, password, username } = req.body;
     const user = await User.signup({ email, username, password });
 
     await setTokenCookie(res, user);

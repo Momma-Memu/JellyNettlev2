@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { signUp } from '../../store/session';
 
@@ -12,7 +11,6 @@ const SignUp = ({props}) => {
     const [scrollVal, setScrollVal] = useState(0)
     const dispatch = useDispatch();
     const slideRef = props.childRef;
-    const history = useHistory();
 
     useEffect(() => {
         document.body.onscroll = () => setScrollVal(document.scrollingElement.scrollTop);
@@ -27,7 +25,7 @@ const SignUp = ({props}) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(signUp(password, email, userName))
+        dispatch(signUp(password, email, userName, confirmPassword))
             .catch(async (res) => {
                 const data = await res.json()
                 const errors = data.errors.filter(el => el !== 'Invalid value');
