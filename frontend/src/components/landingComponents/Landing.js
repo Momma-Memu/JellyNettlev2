@@ -9,16 +9,16 @@ import Footer from './Footer'
 import Win from './Win';
 
 const Landing = () => {
-    const user = useSelector(state => state.session.user);
-    const history = useHistory();
+    // const user = useSelector(state => state.session.user);
+    // const history = useHistory();
 
 
-    useEffect(() => {
-        if(user !== null){
-            history.push('/')
-        }
+    // useEffect(() => {
+    //     if(user !== null){
+    //         history.push('/')
+    //     }
 
-    }, [user, history])
+    // }, [user, history])
 
     return (
         <>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { signUp } from '../../store/session';
 
@@ -11,6 +12,7 @@ const SignUp = ({props}) => {
     const [scrollVal, setScrollVal] = useState(0)
     const dispatch = useDispatch();
     const slideRef = props.childRef;
+    const history = useHistory();
 
     useEffect(() => {
         document.body.onscroll = () => setScrollVal(document.scrollingElement.scrollTop);
@@ -22,20 +24,18 @@ const SignUp = ({props}) => {
             slideRef.current.style.left = '25%';
         }
     }, [slideRef, props.position, scrollVal])
-    // console.log(scrollVal)
 
     const handleSubmit = (e) => {
-        if(confirmPassword !== password){
-            setHeaders(['Passwords do not match.'])
-            return;
-        }
         e.preventDefault();
         dispatch(signUp(password, email, userName))
             .catch(async (res) => {
                 const data = await res.json()
-                if(data && data.errors) setHeaders(data.errors.filter(el => el !== 'Invalid value'))
-
-            })
+                const errors = data.errors.filter(el => el !== 'Invalid value');
+                if(data && data.errors) setHeaders(errors);
+                if(data.errors.length > 0){
+                    console.log(data.errors)
+                };
+            });
     };
 
     const updateUsername = e => setUsername(e.target.value);

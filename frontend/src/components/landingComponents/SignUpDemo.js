@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 
 const SignUpDemo = () => {
     const childRef = useRef();
-    const position = '3%';
+    const position = '0%';
     const dispatch = useDispatch();
 
     const demoLogin = () => {
