@@ -13,11 +13,13 @@ const SignUp = ({props}) => {
     const slideRef = props.childRef;
 
     useEffect(() => {
-        document.body.onscroll = () => setScrollVal(document.scrollingElement.scrollTop);
-
-        if(props.position && scrollVal >= 320){
-            slideRef.current.style.left = props.position;
+        if(props.position){
+            document.body.onscroll = () => setScrollVal(document.scrollingElement.scrollTop);
+            if(scrollVal >= 320){
+                slideRef.current.style.left = props.position;
+            }
         }
+        
         if(!props.position){
             slideRef.current.style.left = '25%';
         }
