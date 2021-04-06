@@ -16,6 +16,12 @@ module.exports = {
         type: Sequelize.STRING(100),
         allowNull: false,
       },
+      userId: {
+        type: Sequelize.INTEGER,
+        allowNull: false, 
+        unique: true,
+        references: { model: 'Users' }
+      },
       gender: {
         type: Sequelize.STRING(30),
         allowNull: false,

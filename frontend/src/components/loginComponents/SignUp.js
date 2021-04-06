@@ -19,9 +19,12 @@ const SignUp = ({props}) => {
                 slideRef.current.style.left = props.position;
             }
         }
-        
+
         if(!props.position){
             slideRef.current.style.left = '25%';
+        }
+        return () => {
+            document.body.onscroll = null;
         }
     }, [slideRef, props.position, scrollVal])
 
