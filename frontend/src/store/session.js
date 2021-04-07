@@ -51,7 +51,7 @@ export const loginUser = (credential, password) => async (dispatch) => {
     })
     const data = await res.json();
     if(res.ok){
-        dispatch(setUser(data));
+        dispatch(setUser(data.user));
     } else {
         dispatch(failedLogin(data))
     }
@@ -73,18 +73,15 @@ export const signUp = (password, email, username, confirmPassword) => async (dis
     })
     if(res.ok){
         const data = await res.json();
-        console.log(data)
         dispatch(setUser(data))
     }
 }
 
 export default function reducer(state = { user: null }, action) {
-    let newState;
-
     switch(action.type){
         case LOGIN_USER:
-            newState = Object.assign({}, state)
-            newState.user = action.payload.user || action.payload;
+            const newState = {}
+            newState.user = action.payload;
             return newState;
         case FAILED_RESTORE:
             return state;

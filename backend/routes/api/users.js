@@ -4,7 +4,7 @@ const asyncHandler = require('express-async-handler');
 const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
 const { setTokenCookie, requireAuth, restoreUser } = require('../../utils/auth');
-const { User } = require('../../db/models');
+const { User, Profile } = require('../../db/models');
 
 const validateSignup = [
     check('email')
@@ -39,6 +39,14 @@ router.post('/', validateSignup, asyncHandler(async (req, res) => {
     await setTokenCookie(res, user);
 
     return res.json({ user });
+}));
+
+router.get('/profile/:id', asyncHandler(async (req, res) => {
+  const { id } = req.params;
+
+  const profile = await Profile.findByPk(id);
+
+  return res.json(profile)
 }));
 
 
