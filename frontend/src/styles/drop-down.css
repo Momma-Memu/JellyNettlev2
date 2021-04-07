@@ -1,0 +1,28 @@
+.drop-down-icon{
+    font-size: 23px;
+    margin-right: 10px;
+    color: rgb(104, 125, 170);
+    transition: color;
+    transition-duration: 0.5s;
+};
+
+.drop-down-icon:hover{
+    cursor: pointer;
+    color: rgb(142, 170, 231);
+    transition: color;
+    transition-duration: 0.5s;
+};
+
+.drop-down-menu-container{
+    position: absolute;
+    right: 0.01%;
+    top: 105%;
+    height: 0px;
+    width: 200px;
+    background-color: rgba(142, 170, 231, 0.5);
+    border: none;
+    border-radius: 3px;
+    overflow-y: hidden;
+    transition: height;
+    transition-duration: 1s;
+};

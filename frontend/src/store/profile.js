@@ -9,7 +9,7 @@ const setProfile = (profile) => ({
 
 
 export const getProfile = (id) => async (dispatch) => {
-    const res = await csrfFetch(`/api/users/profile/${id}`)
+    const res = await csrfFetch(`/api/profile/${id}`)
     if(res.ok){
         const data = await res.json();
         console.log(data)
