@@ -18,7 +18,7 @@ const NavBar = () => {
         };
 
     },[dispatch])
-    const loggedIn = [<Logout />, <DropDown />]
+    const loggedIn = [<Logout key="logout" />, <DropDown key='dropdown' />]
     return (
         <div className='navigation-bar'>
             <Link to='/'>

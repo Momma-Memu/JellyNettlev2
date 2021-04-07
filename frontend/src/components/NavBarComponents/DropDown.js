@@ -1,10 +1,9 @@
-import { useEffect, useState, useRef } from 'react';
-import { NavLink} from 'react-router-dom';
+import { useRef } from 'react';
+// import { NavLink } from 'react-router-dom';
 
 const DropDown = ({props}) => {
-    // const [showMenu, setShowMenu] = useState(false);
     const menuRef = useRef();
-    let timeout;
+    console.log(menuRef)
 
     const openMenu = () => {
         let showing;
@@ -19,10 +18,6 @@ const DropDown = ({props}) => {
             }
         };   
     };
-
-    useEffect(() => {
-        return () => clearTimeout(timeout);
-    },[])
 
     return (
 
