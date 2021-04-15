@@ -10,15 +10,20 @@
 }
 
 .drop-down-menu-container{
-    position: absolute;
-    right: 0.01%;
-    top: 105%;
+    position: relative;
+    z-index: 100;
+    right: -3.5%;
+    top: 260%;
     height: 0px;
-    width: 200px;
-    background-color: rgba(142, 170, 231, 0.5);
-    border: none;
+    width: 220px;
+    background-color: rgba(125, 158, 230, 0.733);
     border-radius: 3px;
-    overflow-y: hidden;
     transition: height;
-    transition-duration: 1s;
+    transition-duration: 0.7s;
 };
+
+.drop-down-buttons{
+    color: white;
+    display: flex;
+    text-decoration: none;
+}

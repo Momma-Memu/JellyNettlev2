@@ -18,7 +18,7 @@ const NavBar = () => {
         };
 
     },[dispatch])
-    const loggedIn = [<Logout key="logout" />, <DropDown key='dropdown' />]
+
     return (
         <div className='navigation-bar'>
             <Link to='/'>
@@ -27,7 +27,7 @@ const NavBar = () => {
             <div className='website-title'>JellyNettle</div>
             {/* {user && !profile ? <div className='profile-builder-button'>Profile Build</div> : null} */}
             {user === null ? <SignUpModal /> : null}
-            {user === null ? <LoginModal /> : loggedIn}
+            {user === null ? <LoginModal /> : <DropDown />}
         </div>
     )
 }

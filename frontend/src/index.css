@@ -2,6 +2,7 @@
 @import url('./styles/login.css');
 @import url('./styles/navigation.css');
 @import url('./styles/drop-down.css');
+@import url('./styles/drop-down-two.css');
 @import url('./styles/modal.css');
 @import url('./styles/carousel.css');
 @import url('./styles/plan-events.css');
@@ -25,18 +26,4 @@
 }
 body{
     background-color: rgb(248, 248, 248);
-}
-
-a{
-    display: flex;
-    text-align: center;
-    align-items: center;
-    text-decoration: none;
-    color: white;
-    font-size: 20px;
-}
-
-a:hover{
-    text-decoration: underline;
-    text-decoration-thickness: 1.5px;
 }

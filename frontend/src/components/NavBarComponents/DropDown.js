@@ -1,9 +1,17 @@
 import { useRef } from 'react';
-// import { NavLink } from 'react-router-dom';
+import { Link, useHistory} from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { logout } from '../../store/session';
 
-const DropDown = ({props}) => {
+const DropDown = (props) => {
+    const { profile } = props;
     const menuRef = useRef();
-    console.log(menuRef)
+    const dispatch = useDispatch();
+    const history = useHistory();
+    const handleLogout = () => {
+        dispatch(logout());
+        history.push('/login');
+    }
 
     const openMenu = () => {
         let showing;
@@ -22,10 +30,21 @@ const DropDown = ({props}) => {
     return (
 
         <>
-            <i className="fas fa-bars drop-down-icon" onClick={openMenu} />
             <div className='drop-down-menu-container' ref={menuRef}>
-
+                {!profile ? 
+                <Link className='drop-down-button' to='/profile/builder' onClick={openMenu}>
+                    <i className="fas fa-tools"/>
+                        Set up your profile
+                    <i className="fas fa-chevron-right"/>
+                </Link> 
+                : null}
+                <div className='drop-down-button' onClick={handleLogout}>
+                    <i className="fas fa-door-open"/>
+                        Logout
+                    <i className="fas fa-chevron-right"/>
+                </div>
             </div>
+            <i className="fas fa-bars drop-down-icon" onClick={openMenu} />
         </>
     )
 }
