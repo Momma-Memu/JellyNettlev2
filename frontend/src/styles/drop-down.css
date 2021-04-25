@@ -11,19 +11,19 @@
 
 .drop-down-menu-container{
     position: relative;
-    z-index: 100;
-    right: -3.5%;
-    top: 260%;
-    height: 0px;
+    z-index: -1;
+    left: 30px;
+    top: -260%;
+    height: 400px;
     width: 220px;
     background-color: rgba(125, 158, 230, 0.733);
     border-radius: 3px;
-    transition: height;
-    transition-duration: 0.7s;
+    transition: top;
+    transition-duration: 0.5s;
 };
 
 .drop-down-buttons{
-    color: white;
+    color: #F8F8F8;
     display: flex;
     text-decoration: none;
 }
