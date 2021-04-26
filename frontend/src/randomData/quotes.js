@@ -23,7 +23,9 @@ const generateGreeting = () => {
         `There's always a lighthouse, always a man, always a city...`,
         'Everything is permitted, Nothing is true.',
         'It was just me against the world... and the world had it coming',
-        'Do a barrel roll!'
+        'Do a barrel roll!',
+        'Hesitation Is Defeat.',
+        'A hero need not speak when he is gone, for the world will speak for him.'
     ]
 
 

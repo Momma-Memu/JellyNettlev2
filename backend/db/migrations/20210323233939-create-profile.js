@@ -26,10 +26,6 @@ module.exports = {
         type: Sequelize.STRING(30),
         allowNull: false,
       },
-      dob: {
-        type: Sequelize.DATE,
-        allowNull: false,
-      },
       favoriteConsole: {
         type: Sequelize.STRING(20),
         allowNull: false,

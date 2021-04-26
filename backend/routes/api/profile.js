@@ -16,6 +16,14 @@ router.get('/:id', asyncHandler(async (req, res) => {
   return res.json(profile)
 }));
 
+router.post('/build', asyncHandler(async (req, res) => {
+  const data = req.body;
+  console.log(data)
+
+  const newProfile = await Profile.create(data);
+  res.json(newProfile);
+}));
+
 
 
 module.exports = router;

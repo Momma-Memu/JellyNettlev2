@@ -36,6 +36,7 @@ const SignUp = ({props}) => {
         const formErrors = [];
         const today = new Date();
         const rawDOB = dob.split('-');
+        console.log(dob)
         const jsDOB = new Date(rawDOB[0], (rawDOB[1] - 1), rawDOB[2]);
         const days = Math.abs(today - jsDOB) / (1000 * 3600 * 24);
 
@@ -47,7 +48,7 @@ const SignUp = ({props}) => {
         if (!(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email))) formErrors.push('Please provide a valid email.');
         if(password !== confirmPassword) formErrors.push('Password and Confirm Password must match exactly.')
         if(formErrors.length === 0){
-            dispatch(signUp(password, email, userName, confirmPassword))
+            dispatch(signUp(password, email, userName, confirmPassword, dob))
                 .catch(async (res) => {
                     const data = await res.json()
                     const errors = data.errors.filter(el => el !== 'Invalid value');

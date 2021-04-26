@@ -21,10 +21,6 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    dob: {
-      type: DataTypes.DATE,
-      allowNull: false,
-    },
     favoriteConsole: {
       type: DataTypes.STRING,
       allowNull: false,

@@ -1,14 +1,18 @@
 import { useState, useEffect } from 'react';
+import { buildProfile } from '../../store/profile';
+import { useDispatch, useSelector } from 'react-redux';
 
 const ProfileForm = ({props}) => {
     const childRef = props;
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [gender, setGender] = useState('Female');
-    const [dob, setDob] = useState('')
-    const [platform, setPlatform] = useState('');
+    const [platform, setPlatform] = useState('PC');
     const [introduction, setIntroduction] = useState('');
     const [errors, setErrors] = useState([]);
+
+    const user = useSelector(state => state.session.user);
+    const dispatch = useDispatch();
 
     const handleSubmit = (e) => {
         const newErrors = [];
@@ -16,18 +20,14 @@ const ProfileForm = ({props}) => {
         if(firstName.length <= 1) newErrors.push('Must provide a valid first name.');
         if(lastName.length <= 1) newErrors.push('Must provide a valid last name.');
 
-        const today = new Date();
-        const rawDOB = dob.split('-');
-        const jsDOB = new Date(rawDOB[0], (rawDOB[1] - 1), rawDOB[2]);
-        const days = Math.abs(today - jsDOB) / (1000 * 3600 * 24);
-
-        if(days < 6574.36) newErrors.push('Users must be 18 years or older.');
-        if(dob.length < 1) newErrors.push('Must provide valid date of birth.')
-
         setErrors(newErrors);
         
         if(newErrors.length === 0){
-            // do the thunk
+            console.log(user)
+            const userId = user.id
+            console.log(userId)
+            const data = {firstName, lastName, gender, favoriteConsole:platform, introduction, userId};
+            dispatch(buildProfile(data))
         }
     }
 
@@ -56,9 +56,6 @@ const ProfileForm = ({props}) => {
                     <option value='Other'>Other</option>
                     <option value='Prefer not to say'>Prefer not to say</option>
                 </select>
-            </label>
-            <label className='input-labels'> Date of Birth
-                <input className='input-date' type='date' value={dob} onChange={e => setDob(e.target.value)}/>
             </label>
             <label className='input-labels'> Favorite Platform
                 <select name='platforms' className='select-field' value={platform} onChange={e => setPlatform(e.target.value)}>
