@@ -6,7 +6,7 @@
     display: flex;
     flex-direction: column;
     height: 400px;
-    max-width: 500px;
+    width: 500px;
     justify-content: center;
     box-shadow: 4px 3px 3px 1px rgba(148, 148, 148, 0.308);
     border-radius: 4px;
@@ -26,21 +26,6 @@
     background-size: 65px;
     margin-bottom: auto;
     margin-top: 20px;
-}
-
-.input-field{
-    border: solid 2px black;
-    border-radius: 3px;
-    padding: 5px;
-    height: 20px;
-    width: 200px;
-}
-
-.input-labels{
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    align-items: center;
 }
 
 .form-headers{

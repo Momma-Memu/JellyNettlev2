@@ -5,7 +5,7 @@
     background-color: white;
     display: flex;
     flex-direction: column;
-    height: 460px;
+    height: 580px;
     width: 450px;
     justify-content: center;
     box-shadow: 4px 3px 3px 1px rgba(148, 148, 148, 0.308);
@@ -24,21 +24,6 @@
     margin-left: 20px;
     border-radius: 4px;
     background-size: 65px;
-}
-
-.input-field{
-    border-radius: 4px;
-    padding: 5px;
-    height: 20px;
-    width: 200px;
-    border: 1px solid #ccc;
-}
-
-.input-labels{
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    align-items: center;
 }
 
 .form-headers{

@@ -8,28 +8,41 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      profileId: {
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        references: { model: 'Profiles' }
+      },
       firstName: {
+        allowNull: false,
         type: Sequelize.BOOLEAN
       },
       lastName: {
+        allowNull: false,
         type: Sequelize.BOOLEAN
       },
       gender: {
         type: Sequelize.BOOLEAN
       },
       displayGroups: {
+        allowNull: false,
         type: Sequelize.BOOLEAN
       },
       displayFriends: {
+        allowNull: false,
         type: Sequelize.BOOLEAN
       },
       dob: {
+        allowNull: false,
         type: Sequelize.BOOLEAN
       },
       type: {
+
+        allowNull: false,
         type: Sequelize.STRING
       },
       whoCanFindMe: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       createdAt: {

@@ -1,6 +1,5 @@
 import LoginModal from '../modals/LoginModal';
 import { useSelector, useDispatch } from 'react-redux';
-import Logout from './Logout';
 import SignUpModal from '../modals/SignUpModal';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';

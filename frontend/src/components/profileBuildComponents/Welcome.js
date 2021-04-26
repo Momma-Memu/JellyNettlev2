@@ -1,10 +1,12 @@
 import { useEffect, useState, useRef } from 'react';
 import { useSelector } from 'react-redux';
+import ProfileForm from './ProfileForm';
 
 const Welcome = () => {
     const [showForm, setShowForm] = useState(false);
     const user = useSelector(state => state.session.user) || {};
     const messageRef = useRef();
+    const childRef = useRef();
     let opacity = 0;
     let index = 0;
     const messages = [
@@ -57,11 +59,11 @@ const Welcome = () => {
     }, [user, messageRef, index])
     
     if(!user) return null;
-
+    
     return (
         <div className='welcome-container'>
             {!showForm ? <div className='message-fader' ref={messageRef}></div> : null}
-            {showForm ? <div>slide me mommy</div> : null}
+            {showForm ? <ProfileForm props={childRef} /> : null}
         </div>
     )
 }

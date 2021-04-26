@@ -15,6 +15,7 @@
 @import url('./styles/Details.css');
 @import url('./styles/footer.css');
 @import url('./styles/welcome.css');
+@import url('./styles/forms.css');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 #root{
