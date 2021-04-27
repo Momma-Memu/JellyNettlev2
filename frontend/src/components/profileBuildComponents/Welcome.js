@@ -1,9 +1,11 @@
 import { useEffect, useState, useRef } from 'react';
 import { useSelector } from 'react-redux';
+import PrivacyRedirect from './PrivacyRedirect';
 import ProfileForm from './ProfileForm';
 
 const Welcome = () => {
     const [showForm, setShowForm] = useState(false);
+    const [privacy, setPrivacy] = useState(false);
     const user = useSelector(state => state.session.user) || {};
     const messageRef = useRef();
     const childRef = useRef();
@@ -63,7 +65,8 @@ const Welcome = () => {
     return (
         <div className='welcome-container'>
             {!showForm ? <div className='message-fader' ref={messageRef}></div> : null}
-            {showForm ? <ProfileForm props={childRef} /> : null}
+            {showForm && !privacy? <ProfileForm props={{childRef, setPrivacy}} /> : null}
+            {privacy ? <PrivacyRedirect /> : null}
         </div>
     )
 }

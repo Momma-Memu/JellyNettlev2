@@ -3,7 +3,7 @@ import { buildProfile } from '../../store/profile';
 import { useDispatch, useSelector } from 'react-redux';
 
 const ProfileForm = ({props}) => {
-    const childRef = props;
+    const { childRef, setPrivacy } = props;
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [gender, setGender] = useState('Female');
@@ -28,11 +28,15 @@ const ProfileForm = ({props}) => {
             console.log(userId)
             const data = {firstName, lastName, gender, favoriteConsole:platform, introduction, userId};
             dispatch(buildProfile(data))
+            childRef.current.style.left = '-80%'
+            setPrivacy(true);
         }
     }
-
     useEffect(() => {
         if(childRef){
+            if(childRef.current.style.left){
+                return;
+            }
             childRef.current.style.left = '3%'
         }
     },[childRef, errors])

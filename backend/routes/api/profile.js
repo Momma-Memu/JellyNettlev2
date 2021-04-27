@@ -4,7 +4,7 @@ const asyncHandler = require('express-async-handler');
 const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
 const { setTokenCookie, requireAuth } = require('../../utils/auth');
-const { Profile } = require('../../db/models');
+const { Profile, Privacy } = require('../../db/models');
 
 
 
@@ -21,6 +21,16 @@ router.post('/build', asyncHandler(async (req, res) => {
   console.log(data)
 
   const newProfile = await Profile.create(data);
+  const privacyData = {
+    profileId: newProfile.id,
+    displayRealName: false,
+    gender: true,
+    displayGroups: true,
+    displayFriends: true,
+    dob: false,
+    whoCanFindMe: 'anyone',
+  };
+  const newPrivacySettings = await Privacy.create(privacyData);
   res.json(newProfile);
 }));
 

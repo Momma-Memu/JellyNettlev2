@@ -13,11 +13,7 @@ module.exports = {
         type: Sequelize.INTEGER,
         references: { model: 'Profiles' }
       },
-      firstName: {
-        allowNull: false,
-        type: Sequelize.BOOLEAN
-      },
-      lastName: {
+      displayRealName: {
         allowNull: false,
         type: Sequelize.BOOLEAN
       },
@@ -35,11 +31,6 @@ module.exports = {
       dob: {
         allowNull: false,
         type: Sequelize.BOOLEAN
-      },
-      type: {
-
-        allowNull: false,
-        type: Sequelize.STRING
       },
       whoCanFindMe: {
         allowNull: false,
