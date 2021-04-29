@@ -23,9 +23,7 @@ const ProfileForm = ({props}) => {
         setErrors(newErrors);
         
         if(newErrors.length === 0){
-            console.log(user)
             const userId = user.id
-            console.log(userId)
             const data = {firstName, lastName, gender, favoriteConsole:platform, introduction, userId};
             dispatch(buildProfile(data))
             childRef.current.style.left = '-80%'

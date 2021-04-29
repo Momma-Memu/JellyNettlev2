@@ -35,24 +35,23 @@ const validateSignup = [
 
 router.post('/', asyncHandler(async (req, res) => {
     const { email, password, username, dob } = req.body;
-    console.log(req.body)
     const user = await User.signup({ email, username, password, dob });
 
     await setTokenCookie(res, user);
 
-    return res.json(user);
-    // res.json({one:1})
+    res.json(user);
+
 }));
 
-router.put('/:id', asyncHandler(async (req, res) => {
+router.put('/update/:id', asyncHandler(async (req, res) => {
   const id = req.params.id;
-  const user = await User.findByPk(id);
+
   if(req.body.password){
     req.body.password = bcrypt.hashSync(req.body.password);
   }
-  const updated = await user.update(req.body);
+  const updated = await User.update(req.body, { where: { id }, returning: true, plain: true, } );
 
-  res.json(updated);
+  res.json(updated[1]);
 }));
 
 

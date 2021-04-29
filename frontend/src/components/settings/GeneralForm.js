@@ -26,7 +26,7 @@ const GeneralForm = () => {
             } else if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(userName)){
                 formErrors.push('Username cannot be an email, or your current email.');
             } else {
-                data.userName = userName
+                data.username = userName
             }
         };
 
@@ -55,9 +55,6 @@ const GeneralForm = () => {
                     const data = await res.json()
                     const errors = data.errors.filter(el => el !== 'Invalid value');
                     if(data && data.errors) setHeaders([...errors, ...formErrors]);
-                    if(data.errors.length > 0){
-                        console.log(data.errors)
-                    };
                 });
                 console.log(info);
         } else {

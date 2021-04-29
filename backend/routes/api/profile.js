@@ -12,13 +12,12 @@ router.get('/:id', asyncHandler(async (req, res) => {
   const { id } = req.params;
 
   const profile = await Profile.findOne({where: {userId: id} });
-  console.log(profile)
+
   return res.json(profile)
 }));
 
 router.post('/build', asyncHandler(async (req, res) => {
   const data = req.body;
-  console.log(data)
 
   const newProfile = await Profile.create(data);
   const privacyData = {

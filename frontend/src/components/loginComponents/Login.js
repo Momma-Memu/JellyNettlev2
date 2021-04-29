@@ -22,7 +22,6 @@ const Login = ({prop}) => {
             .catch(async (res) => {
                 const data = await res.json()
                 if(data && data.errors) setHeaders(data.errors.filter(el => el !== 'Invalid value'))
-                console.log(data);
             })
     };
 

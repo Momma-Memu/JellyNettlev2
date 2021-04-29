@@ -73,7 +73,7 @@ export const logout = () => async (dispatch) => {
 };
 
 export const signUp = (password, email, username, confirmPassword, dob) => async (dispatch) => {
-    console.log(dob)
+
     const res = await csrfFetch('/api/users', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
@@ -87,7 +87,7 @@ export const signUp = (password, email, username, confirmPassword, dob) => async
 }
 
 export const updateUser = (data) => async dispatch => {
-    const res = await csrfFetch(`/api/users/${data.id}`, {
+    const res = await csrfFetch(`/api/users/update/${data.id}`, {
         method: 'put',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(data)

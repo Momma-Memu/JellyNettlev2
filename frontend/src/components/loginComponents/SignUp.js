@@ -36,7 +36,6 @@ const SignUp = ({props}) => {
         const formErrors = [];
         const today = new Date();
         const rawDOB = dob.split('-');
-        console.log(dob)
         const jsDOB = new Date(rawDOB[0], (rawDOB[1] - 1), rawDOB[2]);
         const days = Math.abs(today - jsDOB) / (1000 * 3600 * 24);
 
@@ -53,9 +52,7 @@ const SignUp = ({props}) => {
                     const data = await res.json()
                     const errors = data.errors.filter(el => el !== 'Invalid value');
                     if(data && data.errors) setHeaders([...errors, ...formErrors]);
-                    if(data.errors.length > 0){
-                        console.log(data.errors)
-                    };
+
                 });
         } else {
             setHeaders(formErrors);
