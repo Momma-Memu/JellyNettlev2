@@ -16,7 +16,7 @@ const NavBar = () => {
             dispatch(getProfile(user.id))
         };
 
-    },[dispatch])
+    },[dispatch, user])
 
     return (
         <div className='navigation-bar'>
@@ -26,7 +26,7 @@ const NavBar = () => {
             <div className='website-title'>JellyNettle</div>
             {/* {user && !profile ? <div className='profile-builder-button'>Profile Build</div> : null} */}
             {user === null ? <SignUpModal /> : null}
-            {user === null ? <LoginModal /> : <DropDown />}
+            {user === null ? <LoginModal /> : <DropDown props={profile} />}
         </div>
     )
 }

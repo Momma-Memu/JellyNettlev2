@@ -43,7 +43,7 @@ const SignUp = ({props}) => {
         if(userName.length < 4) formErrors.push('Please provide a username with at least 4 characters.')
         if(days < 6574.36) formErrors.push('Users must be 18 years or older.');
         if(dob.length < 1) formErrors.push('Must provide valid date of birth.');
-        if(userName === email) formErrors.push('Username cannot be an email.');
+        if(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(userName)) formErrors.push('Username cannot be an email.');
         if(password.length < 6) formErrors.push('Password must be 6 characters or more.');
         if (!(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email))) formErrors.push('Please provide a valid email.');
         if(password !== confirmPassword) formErrors.push('Password and Confirm Password must match exactly.')

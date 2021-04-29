@@ -5,6 +5,7 @@ const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
 const { setTokenCookie, requireAuth, restoreUser } = require('../../utils/auth');
 const { User } = require('../../db/models');
+const bcrypt = require('bcryptjs');
 
 const validateSignup = [
     check('email')
@@ -41,6 +42,17 @@ router.post('/', asyncHandler(async (req, res) => {
 
     return res.json(user);
     // res.json({one:1})
+}));
+
+router.put('/:id', asyncHandler(async (req, res) => {
+  const id = req.params.id;
+  const user = await User.findByPk(id);
+  if(req.body.password){
+    req.body.password = bcrypt.hashSync(req.body.password);
+  }
+  const updated = await user.update(req.body);
+
+  res.json(updated);
 }));
 
 

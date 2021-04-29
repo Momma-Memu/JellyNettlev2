@@ -7,6 +7,7 @@ import Landing from './components/landingComponents/Landing';
 import NotFound from './components/NotFound';
 import Home from './components/homeComponents/Home';
 import Welcome from './components/profileBuildComponents/Welcome';
+import Settings from './components/settings/Settings';
 
 function App() {
   const dispatch = useDispatch();
@@ -22,6 +23,7 @@ function App() {
         <Route exact path='/' component={Home} />
         <Route path='/login' component={Landing} />
         <Route path='/profile/builder' component={Welcome} />
+        <Route path='/settings' component={Settings} />
         <Route component={NotFound} />
       </Switch>
     </>

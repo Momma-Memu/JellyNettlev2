@@ -11,8 +11,8 @@ const { Profile, Privacy } = require('../../db/models');
 router.get('/:id', asyncHandler(async (req, res) => {
   const { id } = req.params;
 
-  const profile = await Profile.findByPk(id);
-
+  const profile = await Profile.findOne({where: {userId: id} });
+  console.log(profile)
   return res.json(profile)
 }));
 

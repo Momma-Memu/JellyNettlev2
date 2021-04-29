@@ -3,8 +3,9 @@ import { Link, useHistory} from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { logout } from '../../store/session';
 
-const DropDown = (props) => {
-    const { profile } = props;
+const DropDown = ({props}) => {
+    const profile = props;
+
     const menuRef = useRef();
     const dispatch = useDispatch();
     const history = useHistory();
@@ -38,6 +39,11 @@ const DropDown = (props) => {
                     <i className="fas fa-chevron-right"/>
                 </Link> 
                 : null}
+                <Link className='drop-down-button' to='/settings' onClick={openMenu}>
+                    <i className="fas fa-user-cog"/>
+                        Settings
+                    <i className="fas fa-chevron-right"/>
+                </Link>
                 <div className='drop-down-button' onClick={handleLogout}>
                     <i className="fas fa-door-open"/>
                         Logout

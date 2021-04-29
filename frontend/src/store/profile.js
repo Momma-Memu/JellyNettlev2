@@ -30,7 +30,7 @@ export const buildProfile = (profile) => async dispatch => {
 
 export default function reducer(state = { profile: null }, action) {
     let newState;
-
+    console.log(action.payload)
     switch(action.type){
         case GET_PROFILE:
             newState = Object.assign({}, state)

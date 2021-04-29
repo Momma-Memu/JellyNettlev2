@@ -4,6 +4,7 @@ const LOGIN_USER = 'LOGIN_USER';
 const FAILED_LOGIN = 'FAILED_LOGIN';
 const REMOVE_USER = 'REMOVE_USER';
 const FAILED_RESTORE = 'FAILED_RESTORE';
+const UPDATE_USER = 'UPDATE_USER';
 
 const setUser = (user) => {
     return {
@@ -31,6 +32,12 @@ const failedRestore = () => {
     }
 }
 
+const setUpdatedUser = (user) => {
+    return {
+        type: UPDATE_USER,
+        payload: user
+    }
+}
 
 export const restoreUser = () => async dispatch => {
     const response = await csrfFetch('/api/session');
@@ -75,19 +82,40 @@ export const signUp = (password, email, username, confirmPassword, dob) => async
     if(res.ok){
         const data = await res.json();
         dispatch(setUser(data))
+        return data;
+    }
+}
+
+export const updateUser = (data) => async dispatch => {
+    const res = await csrfFetch(`/api/users/${data.id}`, {
+        method: 'put',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(data)
+    })
+
+    if(res.ok){
+        const resData = await res.json();
+        dispatch(setUpdatedUser(resData));
     }
 }
 
 export default function reducer(state = { user: null }, action) {
     switch(action.type){
-        case LOGIN_USER:
+        case LOGIN_USER:{
             const newState = {}
             newState.user = action.payload;
             return newState;
+        }
         case FAILED_RESTORE:
             return state;
         case REMOVE_USER:
             return { user: null }
+        case UPDATE_USER: {
+            const newState = {}
+            newState.user = action.payload;
+            return newState;
+        }
+            
         default:
             return state;
     }

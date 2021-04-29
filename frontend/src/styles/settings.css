@@ -1,0 +1,53 @@
+.settings-container{
+    margin-top: 20px;
+    padding: 3px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.settings-side-panel{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 200px;
+    width: 150px;
+    border-radius: 3px;
+    background-color: white;
+    box-shadow: 4px 3px 3px 1px rgba(148, 148, 148, 0.308);
+}
+
+.settings-panel-option{
+    font-size: 18px;
+    padding: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    text-decoration: none;
+    background-color: rgba(128, 128, 128, 0);
+    transition: background-color;
+    transition-duration: 0.2s;
+}
+
+.settings-panel-option:hover{
+    background-color: rgba(85, 85, 85, 0.308);
+    transition: background-color;
+    transition-duration: 0.2s;
+    cursor: pointer;
+}
+
+.settings-form{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    height: 550px;
+    width: 500px;
+    justify-content: center;
+    box-shadow: 4px 3px 3px 1px rgba(148, 148, 148, 0.308);
+    border-radius: 4px;
+    z-index: 20;
+    transition: all;
+    transition-duration: 0.5s;
+    margin-right: 5%;
+}
