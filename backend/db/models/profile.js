@@ -31,7 +31,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }, {});
   Profile.associate = function(models) {
-    Profile.hasOne(models.Privacy, { foreignKey: 'profileId' })
+    Profile.hasOne(models.Privacy, { foreignKey: 'profileId', onDelete: 'CASCADE', hooks: true })
     Profile.belongsTo(models.User, { foreignKey: 'userId' });
   };
   return Profile;

@@ -55,6 +55,13 @@ router.put('/update/:id', asyncHandler(async (req, res) => {
 }));
 
 
+router.delete('/delete/:id', asyncHandler(async (req, res) => {
+  const id = req.params.id;
+  console.log('============================', id)
+  const user = await User.findByPk(id);
+  const oldUser = await user.destroy()
 
+  res.json({ status: 'yeeted' })
+}))
 
 module.exports = router;

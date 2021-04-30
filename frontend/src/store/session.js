@@ -64,13 +64,28 @@ export const loginUser = (credential, password) => async (dispatch) => {
     }
 }
 
-export const logout = () => async (dispatch) => {
+export const logout = () => async dispatch => {
     const response = await csrfFetch('/api/session', {
       method: 'DELETE',
     });
     dispatch(removeUser());
     return response;
 };
+
+export const deleteUser = (id) => async dispatch => {
+    console.log(id)
+    const res = await csrfFetch(`/api/users/delete/${id}`, {
+        method: 'DELETE',
+    })
+
+    const response = await csrfFetch('/api/session', {
+        method: 'DELETE',
+    });
+
+
+    dispatch(removeUser());
+    // return response;
+}
 
 export const signUp = (password, email, username, confirmPassword, dob) => async (dispatch) => {
 

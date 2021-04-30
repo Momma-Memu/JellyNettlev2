@@ -5,7 +5,7 @@ const PrivacyRedirect = () => {
     
     const redirectUser = (choice) => {
         if(choice === 'yes'){
-            history.push('/privacy')
+            history.push('/settings')
         } else {
             history.push('/')
         }

@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
+import { useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import PrivacyRedirect from './PrivacyRedirect';
 import ProfileForm from './ProfileForm';
@@ -7,6 +8,8 @@ const Welcome = () => {
     const [showForm, setShowForm] = useState(false);
     const [privacy, setPrivacy] = useState(false);
     const user = useSelector(state => state.session.user) || {};
+    const profile = useSelector(state => state.profile);
+    const history = useHistory();
     const messageRef = useRef();
     const childRef = useRef();
     let opacity = 0;
@@ -36,7 +39,7 @@ const Welcome = () => {
             timeout = setTimeout(() => {
                 setShowForm(true)
             }, 1000);
-            return;
+            return timeout;
         };
         if(opacity === 0){
             fadeIn();
@@ -44,13 +47,14 @@ const Welcome = () => {
             fadeOut();
         }
     }
+    if(profile) history.push('/error')
 
     useEffect(() => {
         let interval;
         let timeout;
         if(user && messageRef) {
             interval = setInterval(() => {
-                handleFading(interval, timeout);
+                timeout = handleFading(interval, timeout);
             }, 3000);
         }
         return () => {
