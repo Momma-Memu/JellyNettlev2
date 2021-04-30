@@ -8,7 +8,7 @@ import DropDown from './DropDown';
 
 const NavBar = () => {
     const user = useSelector(state => state.session.user);
-    const profile = useSelector(state => state.profile.profile);
+    const profile = useSelector(state => state.profile);
     const dispatch = useDispatch();
 
     useEffect(() => {

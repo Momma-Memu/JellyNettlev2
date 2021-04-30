@@ -37,6 +37,47 @@
     cursor: pointer;
 }
 
+.current-settings-panel{
+    background-color: white;
+    border-radius: 4px;
+    width: 215px;
+    height: 300px;
+    box-shadow: 4px 3px 3px 1px rgba(148, 148, 148, 0.308);
+    display: flex;
+    flex-direction: column;
+}
+.current-settings-panel-general{
+    background-color: white;
+    border-radius: 4px;
+    width: 215px;
+    height: 200px;
+    box-shadow: 4px 3px 3px 1px rgba(148, 148, 148, 0.308);
+    display: flex;
+    flex-direction: column;
+}
+
+.current-settings-item-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-left: 5px;
+    height: 100%;
+}
+
+.current-settings-header{
+    font-size: 19px;
+    color: white;
+    text-align: center;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    padding: 10px;
+    background-color: rgb(142, 170, 231);
+}
+
+.current-settings-item{
+    font-size: 15px;
+}
+
 .settings-form{
     background-color: white;
     display: flex;
@@ -49,5 +90,30 @@
     z-index: 20;
     transition: all;
     transition-duration: 0.5s;
-    margin-right: 5%;
+}
+
+
+.input-radio-labels{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.radio-inputs{
+    height: 30px;
+    width: 5%;
+    border-radius: 4px;
+    border: solid 1px rgb(199, 199, 199);;
+    font-family: 'Roboto', sans-serif;
+}
+
+.settings-explanation{
+    text-align: center;
+    padding: 5px;
+}
+
+.changes-saved{
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 25px;
 }

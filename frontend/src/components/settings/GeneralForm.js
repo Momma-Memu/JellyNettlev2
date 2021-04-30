@@ -56,7 +56,9 @@ const GeneralForm = () => {
                     const errors = data.errors.filter(el => el !== 'Invalid value');
                     if(data && data.errors) setHeaders([...errors, ...formErrors]);
                 });
-                console.log(info);
+                if(info){
+                    setSaved(true)
+                }
         } else {
             setHeaders(formErrors);
         }
@@ -66,7 +68,7 @@ const GeneralForm = () => {
     return (
         <form className='settings-form' onSubmit={e => handleSubmit(e)}>
             <ul>{badUpdateMessages}</ul>
-            {saved ? <div>Changes saved.</div> : null}
+            {saved ? <div className='changes-saved'>Changes saved.</div> : null}
             <label className='input-labels'>New Username
                 <input type='text' value={userName} onChange={e => setUserName(e.target.value)} className='input-field'/>
             </label>

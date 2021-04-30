@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
     whoCanFindMe: DataTypes.STRING
   }, {});
   Privacy.associate = function(models) {
-    // associations can be defined here
+    Privacy.belongsTo(models.Profile, { foreignKey: 'profileId' })
   };
   return Privacy;
 };
