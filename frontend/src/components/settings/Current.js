@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 
 const Current = ({setting}) => {
-    const profile = useSelector(state => state.profile);
+    const privacy = useSelector(state => state.privacy);
     const user = useSelector(state => state.session.user);
 
 
@@ -16,7 +16,7 @@ const Current = ({setting}) => {
             </div>
         )
     } else if (setting === 'privacy'){
-        const { displayName, displayGroups, displayFriends, dob, gender, whoCanFindMe } = profile?.Privacy;
+        const { displayRealName, displayGroups, displayFriends, dob, gender, whoCanFindMe } = privacy;
         return (
             <div className='current-settings-panel'>
                 <div className='current-settings-header'>Current privacy settings</div>
@@ -25,7 +25,7 @@ const Current = ({setting}) => {
                     <div className='current-settings-item'>Display Friends: {displayFriends ? 'yes' : 'no'}</div>
                     <div className='current-settings-item'>Display Gender: {gender ? 'yes' : 'no'}</div>
                     <div className='current-settings-item'>Display Groups: {displayGroups ? 'yes' : 'no'}</div>
-                    <div className='current-settings-item'>Display Name: {displayName ? 'real name' : 'username'}</div>
+                    <div className='current-settings-item'>Display Name: {displayRealName ? 'real name' : 'username'}</div>
                     <div className='current-settings-item'>Who Can Friend You: {whoCanFindMe}</div>
                 </div>
             </div>

@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import { getProfile } from '../../store/profile';
 import DropDown from './DropDown';
+import { getPrivacy } from '../../store/privacy'
 
 const NavBar = () => {
     const user = useSelector(state => state.session.user);
@@ -17,6 +18,12 @@ const NavBar = () => {
         };
 
     },[dispatch, user])
+
+    useEffect(() => {
+        if(profile){
+            dispatch(getPrivacy(profile.id))
+        }
+    }, [dispatch, profile])
 
     return (
         <div className='navigation-bar'>

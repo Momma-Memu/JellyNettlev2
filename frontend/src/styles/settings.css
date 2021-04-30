@@ -82,9 +82,23 @@
     background-color: white;
     display: flex;
     flex-direction: column;
+    height: 450px;
+    width: 500px;
+    justify-content: flex-end;
+    box-shadow: 4px 3px 3px 1px rgba(148, 148, 148, 0.308);
+    border-radius: 4px;
+    z-index: 20;
+    transition: all;
+    transition-duration: 0.5s;
+}
+
+.settings-form-privacy{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
     height: 550px;
     width: 500px;
-    justify-content: center;
+    justify-content: flex-end;
     box-shadow: 4px 3px 3px 1px rgba(148, 148, 148, 0.308);
     border-radius: 4px;
     z-index: 20;
@@ -109,6 +123,9 @@
 
 .settings-explanation{
     text-align: center;
+    font-size: 18px;
+    background-color: rgb(142, 170, 231);
+    color: white;
     padding: 5px;
 }
 

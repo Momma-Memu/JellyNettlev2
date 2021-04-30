@@ -8,7 +8,7 @@ const { Profile, Privacy } = require('../../db/models');
 router.get('/:id', asyncHandler(async (req, res) => {
   const { id } = req.params;
 
-  const profile = await Profile.findOne({where: {userId: id}, include: { model: Privacy } });
+  const profile = await Profile.findOne({where: {userId: id} });
 
   return res.json(profile)
 }));
@@ -36,7 +36,7 @@ router.put('/update/:id', asyncHandler(async (req, res) => {
   if(req.body.password){
     req.body.password = bcrypt.hashSync(req.body.password);
   }
-  const updated = await Profile.update(req.body, { where: { id }, returning: true, plain: true, include: { model: Privacy } } );
+  const updated = await Profile.update(req.body, { where: { id }, returning: true, plain: true } );
 
   res.json(updated[1]);
 }));
