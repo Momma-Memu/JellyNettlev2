@@ -11,11 +11,11 @@ const { ValidationError } = require('sequelize');
 const isProduction = environment === 'production';
 
 const app = express();
-app.use(morgan('dev'));
 
+app.use(morgan('dev'));
 app.use(cookieParser());
 app.use(express.json());
-
+app.use(express.urlencoded({ extended: true }));
 
 // Security Middleware
 if (!isProduction) {
@@ -70,3 +70,4 @@ app.use((err, _req, res, _next) => {
 
 
 module.exports = app;
+

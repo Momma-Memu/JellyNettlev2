@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router();
 const asyncHandler = require('express-async-handler');
 const { Profile, Privacy } = require('../../db/models');
+const { singleMulterUpload, singlePublicFileUpload } = require('../../cloudinary');
 
 
 
@@ -13,10 +14,13 @@ router.get('/:id', asyncHandler(async (req, res) => {
   return res.json(profile)
 }));
 
-router.post('/build', asyncHandler(async (req, res) => {
+router.post('/build', singleMulterUpload('image'), asyncHandler(async (req, res) => {
+  const image = await singlePublicFileUpload(req.file)
   const data = req.body;
+  data.photoUrl = image.url; 
 
   const newProfile = await Profile.create(data);
+
   const privacyData = {
     profileId: newProfile.id,
     displayRealName: false,

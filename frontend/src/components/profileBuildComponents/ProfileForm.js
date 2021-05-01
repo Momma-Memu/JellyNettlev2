@@ -12,7 +12,6 @@ const ProfileForm = ({props}) => {
     const [introduction, setIntroduction] = useState('');
     const [image, setImage] = useState(null)
     const [errors, setErrors] = useState([]);
-    const [saved, setSaved] = useState(false)
     const uploadRef = useRef();
     const savedDiv = useRef();
 
@@ -29,10 +28,10 @@ const ProfileForm = ({props}) => {
         
         if(newErrors.length === 0){
             const userId = user.id
-            const data = {firstName, lastName, gender, favoriteConsole:platform, introduction, userId};
+            const data = {firstName, lastName, gender, favoriteConsole:platform, introduction, userId, image};
             dispatch(buildProfile(data))
-            childRef.current.style.left = '-80%'
-            setPrivacy(true);
+            // childRef.current.style.left = '-80%'
+            // setPrivacy(true);
         }
     }
     useEffect(() => {
@@ -52,7 +51,6 @@ const ProfileForm = ({props}) => {
     const handleSaveImage = (e) => {
         setImage(e.target.files[0]);
         uploadRef.current.style.opacity = 0;
-        setSaved(true);
         savedDiv.current.style.opacity = 1;
     }
 
