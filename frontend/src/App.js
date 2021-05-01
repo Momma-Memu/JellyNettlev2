@@ -8,6 +8,8 @@ import NotFound from './components/NotFound';
 import Home from './components/homeComponents/Home';
 import Welcome from './components/profileBuildComponents/Welcome';
 import Settings from './components/settings/Settings';
+import Footer from './components/landingComponents/Footer';
+import Profile from './components/profileComponents/Profile';
 
 function App() {
   const dispatch = useDispatch();
@@ -24,8 +26,10 @@ function App() {
         <Route path='/login' component={Landing} />
         <Route path='/profile/builder' component={Welcome} />
         <Route path='/settings' component={Settings} />
+        <Route path='/profile/:username' component={Profile} />
         <Route component={NotFound} />
       </Switch>
+      <Footer />
     </>
   );
 }

@@ -39,6 +39,45 @@
     font-family: 'Roboto', sans-serif;
 }
 
+.input-file-field{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    align-self: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: rgb(142, 170, 231);
+    border-radius: 3px;
+    box-shadow: 4px 2px 4px 0px rgba(197, 197, 197, 0.527);
+    border: none;
+    color: white;
+    color: white;
+    font-size: 15px;
+    width: 70px;
+    height: 30px;
+    transition: all;
+    transition-duration: 0.5s;
+}
+
+.input-file-field:hover{
+    background-color: rgba(197, 197, 197, 0.335);
+    border-color: black;
+    border: solid 1px black;
+    color: black;
+    transition: all;
+    transition-duration: 0.5s;
+    cursor: pointer;
+}
+.saved-image{
+    position: absolute;
+    z-index: -1;
+    right: 4%;
+    opacity: 0;
+    transition: all;
+    transition-duration: 0.5s;
+}
+
 .input-date{
     border: solid 1px rgb(199, 199, 199);;
     border-radius: 3px;

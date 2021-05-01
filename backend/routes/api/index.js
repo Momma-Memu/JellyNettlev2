@@ -5,8 +5,7 @@ const { User } = require('../../db/models');
 const sessionRouter = require('./session');
 const userRouter = require('./users');
 const profileRouter = require('./profile');
-const privacyRouter = require('./privacy')
-
+const privacyRouter = require('./privacy');
 
 router.use('/session', sessionRouter);
 router.use('/users', userRouter);

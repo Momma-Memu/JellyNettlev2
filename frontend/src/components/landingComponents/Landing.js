@@ -29,7 +29,6 @@ const Landing = () => {
                 <Win />
             </div>
             <SignUpDemo />
-            <Footer />
         </>
     )
 }

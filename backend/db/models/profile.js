@@ -9,6 +9,10 @@ module.exports = (sequelize, DataTypes) => {
         len: [4, 20]
       }
     },
+    photoUrl: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
     lastName: {
       type: DataTypes.STRING,
       allowNull: false,
