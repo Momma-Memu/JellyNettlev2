@@ -18,6 +18,7 @@
 @import url('./styles/forms.css');
 @import url('./styles/buttons.css');
 @import url('./styles/settings.css');
+@import url('./styles/profile.css');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 #root{

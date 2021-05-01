@@ -1,0 +1,32 @@
+.profile-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-picture{
+    height: 170px;
+    border: solid 4px rgb(34, 34, 34);
+    border-radius: 50%;
+}
+.profile-username{
+    text-align: center;
+    font-size: 35px;
+    font-weight: 500;
+}
+
+.profile-body{
+    margin-top: 5%;
+    display: flex;
+}
+
+.profile-details{
+    display: flex;
+    flex-direction: column;
+    border-radius: 3px;
+    background-color: white;
+    box-shadow: 4px 3px 3px 1px rgba(148, 148, 148, 0.308);
+    padding: 20px;
+    justify-content: space-around;
+}
