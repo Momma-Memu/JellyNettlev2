@@ -29,4 +29,5 @@
     box-shadow: 4px 3px 3px 1px rgba(148, 148, 148, 0.308);
     padding: 20px;
     justify-content: space-around;
+    min-height: 100px;
 }

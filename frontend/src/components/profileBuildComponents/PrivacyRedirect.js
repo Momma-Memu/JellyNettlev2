@@ -1,9 +1,18 @@
 import { useHistory } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux'
+import { getProfile } from '../../store/profile';
+import { getPrivacy } from '../../store/privacy';
+
 
 const PrivacyRedirect = () => {
     const history = useHistory();
+    const dispatch = useDispatch();
+    const user = useSelector(state => state.session.user);
     
-    const redirectUser = (choice) => {
+    const redirectUser = async (choice) => {
+        const data = await dispatch(getProfile(user.id));
+        dispatch(getPrivacy(data.id));
+        
         if(choice === 'yes'){
             history.push('/settings')
         } else {

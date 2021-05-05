@@ -13,6 +13,8 @@ import Profile from './components/profileComponents/Profile';
 
 function App() {
   const dispatch = useDispatch();
+  const apiKey = process.env.CLOUDINARY_API_KEY
+  console.log(apiKey)
 
   useEffect(() => {
     dispatch(restoreUser());

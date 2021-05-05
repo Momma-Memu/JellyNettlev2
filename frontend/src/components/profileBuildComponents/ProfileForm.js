@@ -30,8 +30,8 @@ const ProfileForm = ({props}) => {
             const userId = user.id
             const data = {firstName, lastName, gender, favoriteConsole:platform, introduction, userId, image};
             dispatch(buildProfile(data))
-            // childRef.current.style.left = '-80%'
-            // setPrivacy(true);
+            childRef.current.style.left = '-80%'
+            setPrivacy(true);
         }
     }
     useEffect(() => {

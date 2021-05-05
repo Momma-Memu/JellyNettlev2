@@ -2,7 +2,7 @@ import { useContext, createContext, useState } from 'react';
 
 const ThemeContext = createContext();
 
-export const ThemeContextProvider = (props) => {
+const ThemeContextProvider = (props) => {
     const [theme, setTheme] = useState('light');
 
     return (
@@ -11,5 +11,7 @@ export const ThemeContextProvider = (props) => {
         </ThemeContext.Provider>
     );
 };
+
+export default ThemeContextProvider;
 
 export const useConsumeContext = () => useContext(ThemeContext);

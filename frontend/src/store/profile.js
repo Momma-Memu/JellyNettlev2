@@ -19,7 +19,8 @@ export const getProfile = (id) => async dispatch => {
     const res = await csrfFetch(`/api/profile/${id}`)
     if(res.ok){
         const data = await res.json();
-        dispatch(setProfile(data))
+        dispatch(setProfile(data));
+        return data;
     }
 }
 
@@ -43,7 +44,7 @@ export const buildProfile = (profile) => async dispatch => {
     formData.append('introduction', introduction);
     formData.append('userId', userId);
     formData.append('image', image);
-    console.log(profile.image)
+
     const res = await csrfFetch('/api/profile/build', {
         method: "POST",
         headers: {
@@ -53,7 +54,6 @@ export const buildProfile = (profile) => async dispatch => {
       });
     if(res.ok){
         const data = await res.json();
-        dispatch(setProfile(data))
         return data;
     }
 }

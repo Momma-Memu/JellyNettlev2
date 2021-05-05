@@ -67,11 +67,14 @@ const Welcome = () => {
     if(!user) return null;
     
     return (
-        <div className='welcome-container'>
-            {!showForm ? <div className='message-fader' ref={messageRef}></div> : null}
-            {showForm && !privacy? <ProfileForm props={{childRef, setPrivacy}} /> : null}
-            {privacy ? <PrivacyRedirect /> : null}
-        </div>
+        <>
+            <div className='welcome-container'>
+                {!showForm ? <div className='message-fader' ref={messageRef}></div> : null}
+                {showForm && !privacy? <ProfileForm props={{childRef, setPrivacy}} /> : null}
+                {privacy ? <PrivacyRedirect /> : null}
+            </div>
+            <div className='buffer'></div>
+        </>
     )
 }
 

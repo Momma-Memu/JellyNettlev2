@@ -15,9 +15,12 @@ router.get('/:id', asyncHandler(async (req, res) => {
 }));
 
 router.post('/build', singleMulterUpload('image'), asyncHandler(async (req, res) => {
-  const image = await singlePublicFileUpload(req.file)
+  let image
+  if(req.file){
+    image = await singlePublicFileUpload(req.file)
+  }
   const data = req.body;
-  data.photoUrl = image.url; 
+  if(image) data.photoUrl = image.url; 
 
   const newProfile = await Profile.create(data);
 

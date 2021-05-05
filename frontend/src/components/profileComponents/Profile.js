@@ -1,13 +1,36 @@
-import { useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { useParams, Link } from 'react-router-dom';
+import { getProfile } from '../../store/profile';
+import { getPrivacy } from '../../store/privacy';
+
 
 const Profile = () => {
     const { username } = useParams()
     const user = useSelector(state => state.session.user);
     const profile = useSelector(state => state.profile);
     const privacy = useSelector(state => state.privacy);
+    const dispatch = useDispatch();
 
-    if(!user || !profile || !privacy) return null;
+    const handleAsyncDispatch = async () => {
+        const data = await dispatch(getProfile(user.id));
+        if(data){
+            dispatch(getPrivacy(data.id));
+        };
+    };
+
+    useEffect(() => {
+        handleAsyncDispatch();
+    }, [dispatch, handleAsyncDispatch]);
+
+    if(!profile || !privacy) return (
+        <div className='notification-form'>
+            <span className='notification-header'>You haven't setup your profile yet, do you want to do that now?</span>
+            <Link to='/profile/builder'>
+                <button className='choice-button'>Let's go!</button> 
+            </Link>
+        </div>
+    );
 
     if(username === user.username){
         return (
