@@ -1,4 +1,5 @@
 .profile-header{
+    padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -7,6 +8,7 @@
 
 .profile-picture{
     height: 170px;
+    width: 180px;
     border: solid 4px rgb(34, 34, 34);
     border-radius: 50%;
 }

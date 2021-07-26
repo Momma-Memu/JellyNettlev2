@@ -13,7 +13,10 @@ const Profile = () => {
     const dispatch = useDispatch();
 
     const handleAsyncDispatch = async () => {
-        const data = await dispatch(getProfile(user.id));
+        let data;
+        
+        if(user) data = await dispatch(getProfile(user.id));
+
         if(data){
             dispatch(getPrivacy(data.id));
         };
@@ -21,9 +24,11 @@ const Profile = () => {
 
     useEffect(() => {
         handleAsyncDispatch();
-    }, [dispatch, handleAsyncDispatch]);
+    }, [dispatch]);
 
-    if(!profile || !privacy) return (
+    if(!profile || !privacy || !user) return null;
+
+    if((!profile || !privacy) && username === user.username) return (
         <div className='notification-form'>
             <span className='notification-header'>You haven't setup your profile yet, do you want to do that now?</span>
             <Link to='/profile/builder'>
@@ -33,6 +38,7 @@ const Profile = () => {
     );
 
     if(username === user.username){
+        console.log(profile.dob)
         return (
             <>
                 <div className='profile-header'>
@@ -44,7 +50,7 @@ const Profile = () => {
                     <div className='profile-details'>
                         <span>System: {profile.favoriteConsole}</span>
                         {privacy.gender ?< span>Gender: {profile.gender}</span> : null}
-                        {privacy.dob ? <span>Birthday: {profile.dob}</span> : null}
+                        {privacy.dob ? <span>Birthday: {new Date(user.dob).toDateString()}</span> : null}
                         <span>Member Since: {user.createdAt.split('-')[0]}</span>
                     </div>
                 </div>
