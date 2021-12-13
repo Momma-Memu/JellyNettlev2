@@ -3,32 +3,29 @@ import { useDispatch } from 'react-redux';
 import { signUp } from '../../store/session';
 
 const SignUp = ({props}) => {
+    
     const [userName, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [headers, setHeaders] = useState([]);
-    // const [scrollVal, setScrollVal] = useState(0);
     const [dob, setDob] = useState('');
     const dispatch = useDispatch();
     const slideRef = props.childRef;
-    const scrollVal = props.scrollVal;
-    // const setScrollVal = props.setScrollVal;
+    const { scrollVal, position } = props;
 
     useEffect(() => {
         if(props.position){
-            // document.body.onscroll = () => setScrollVal(document.scrollingElement.scrollTop);
+
             if(scrollVal >= 320){
                 slideRef.current.style.left = props.position;
             }
         }
 
-        if(!props.position){
-            slideRef.current.style.left = '25%';
+        if(props.position && scrollVal === null){
+            slideRef.current.style.left = position;
         }
-        // return () => {
-        //     document.body.onscroll = null;
-        // }
+
     }, [slideRef, props.position, scrollVal, props])
 
     const handleSubmit = (e) => {

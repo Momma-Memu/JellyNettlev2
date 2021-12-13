@@ -2,14 +2,20 @@ import React, { useState, useRef } from 'react';
 import SignUp from '../loginComponents/SignUp';
 
 const SignUpModal = () => {
+    const width  = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     const [display, setDisplay] = useState(false);
     const modalRef = useRef();
     const childRef = useRef();
+    let position = '25%';
 
     const reveal = () => {
         setDisplay(true);
     }
 
+
+    if (width <= 750 && width > 599) {
+        position = '18%';
+    }
 
     const hide = (e) => {
         if(e.target.classList.contains('modal-overlay')){
@@ -25,7 +31,7 @@ const SignUpModal = () => {
             <button onClick={reveal} className='sign-up-nav-button'>Sign Up</button>
             { display  ?
                 <div className='modal-overlay' ref={modalRef} onClick={hide}>
-                    <SignUp props={{childRef}} />
+                    <SignUp props={{childRef, position, scrollVal: null}} />
                 </div>
             : null }
         </>

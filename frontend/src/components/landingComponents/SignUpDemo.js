@@ -4,9 +4,15 @@ import { loginUser } from '../../store/session';
 import { useDispatch } from 'react-redux';
 
 const SignUpDemo = () => {
+    const width  = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     const [scrollVal, setScrollVal] = useState(0);
     const childRef = useRef();
-    const position = '0%';
+    let position = '0%';
+
+    if (width <= 750 && width > 599) {
+        position = '18%';
+    }
+
     const dispatch = useDispatch();
 
     const demoLogin = () => {
