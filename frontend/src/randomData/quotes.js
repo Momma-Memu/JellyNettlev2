@@ -25,7 +25,12 @@ const generateGreeting = () => {
         'It was just me against the world... and the world had it coming',
         'Do a barrel roll!',
         'Hesitation Is Defeat.',
-        'A hero need not speak when he is gone, for the world will speak for him.'
+        'A hero need not speak when he is gone, for the world will speak for him.',
+        'Triple, baby!',
+        "Ah don't be like that, you know you'd also want my shoes.",
+        "I got your backs. Just...y'know...from the front",
+        "They're supposed to be fighting back, right?",
+        "Don't stress if I die. It was great knowing you all. Also, delete my hard drive",
     ]
 
 

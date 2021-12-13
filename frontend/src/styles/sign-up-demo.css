@@ -11,6 +11,7 @@
     justify-content: space-between;
     align-items: center;
     margin-left: auto;
+    width: 50%;
     margin-right: 2%;
 }
 
@@ -45,9 +46,34 @@
     background-image: url('../images/game-dude.png');
     background-position: center;
     background-size: cover;
-    width: 350px;
-    height: 300px;
+    width: 65%;
+    height: 55%;
     border-radius: 4px;
     box-shadow: 4px 2px 4px 0px rgba(197, 197, 197, 0.671);
     z-index: 1;
+}
+
+/* smaller screens  */
+@media only screen and (max-width: 999px)  {
+    .game-dude-background {
+        display: none;
+    }
+
+    .demo-box {
+        justify-content: space-evenly;
+    }
+}
+
+/* mobile screens  */
+
+@media only screen and (max-width: 750px) {
+    .any-system {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .demo-box {
+        margin: 0%;
+        width: 100%;
+    }
 }

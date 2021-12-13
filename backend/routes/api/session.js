@@ -21,11 +21,12 @@ const validateLogin = [
 
 router.get('/', restoreUser, (req, res) => {
     const { user } = req;
-    console.log(user)
-    if (user) {
-    return res.json({ user: user.toSafeObject() });
 
-    } else return res.json({});
+    if (user) {
+      return res.json({ user: user.toSafeObject() });
+    } else {
+      return res.json({});
+    } 
 });
 
 //login route, needs to be updated for your cradentials later;

@@ -38,7 +38,6 @@ const Profile = () => {
     );
 
     if(username === user.username){
-        console.log(profile.dob)
         return (
             <>
                 <div className='profile-header'>
