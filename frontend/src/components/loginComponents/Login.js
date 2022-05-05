@@ -12,7 +12,8 @@ const Login = ({prop}) => {
     const slideRef = prop.childRef;
 
     useEffect(() => {
-        slideRef.current.style.left = '25%'
+        // maintains consistent positioning in the center of the innerWidth values of the window.
+        slideRef.current.style.left = `calc(50% - 250px)`;
         setQuote(Quote());
     }, [slideRef])
 
@@ -25,6 +26,10 @@ const Login = ({prop}) => {
             })
     };
 
+    const demoLogin = () => {
+        dispatch(loginUser('Demo-lition','password'))
+    }
+
     const updateCredential = e => setCredential(e.target.value);
     const updatePassword = e => setPassword(e.target.value);
 
@@ -32,16 +37,21 @@ const Login = ({prop}) => {
 
     return (
         <form onSubmit={handleSubmit} className='login-container' ref={slideRef}>
-            <div className='logo-div'></div>
-            <div className='quote-section'>{quote}</div>
-            <ul>{badLoginMessages}</ul>
-            <label className='input-labels'> Username or Email
-                <input type='text' value={credential} onChange={updateCredential} className='input-field'/>
-            </label>
-            <label className='input-labels'>Password
-                <input type='password' value={password} onChange={updatePassword} className='input-field'/>
-            </label>
-            <button type='submit' className='login-button'>Login</button>
+            <div className='top-level-items'>
+                <div className='logo-div'></div>
+                <button className='login-demo-button' onClick={demoLogin}>Demo</button>
+            </div>
+            <div className='bottom-level-items'>
+                <ul>{badLoginMessages}</ul>
+                <div className='quote-section'>{quote}</div>
+                <label className='input-labels'> Username or Email
+                    <input type='text' value={credential} onChange={updateCredential} className='input-field'/>
+                </label>
+                <label className='input-labels'>Password
+                    <input type='password' value={password} onChange={updatePassword} className='input-field'/>
+                </label>
+                <button type='submit' className='login-button'>Login</button>
+            </div>
         </form>
     );
 };

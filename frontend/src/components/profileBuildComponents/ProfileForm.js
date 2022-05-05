@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { buildProfile } from '../../store/profile';
 import { useDispatch, useSelector } from 'react-redux';
-import { set } from 'js-cookie';
 
 const ProfileForm = ({props}) => {
     const { childRef, setPrivacy } = props;
@@ -42,11 +41,6 @@ const ProfileForm = ({props}) => {
             childRef.current.style.left = '3%'
         }
     },[childRef, errors])
-
-    // useEffect(() => {
-    //     if(savedDiv.current) savedDiv.current.style.opacity = 1;
-    // },[savedDiv])
-    
 
     const handleSaveImage = (e) => {
         setImage(e.target.files[0]);

@@ -4,8 +4,7 @@ import { useHistory } from 'react-router-dom'
 import Carousel from './Carousel';
 import PlanEvents from './PlanEvents';
 import Connect from './Connect';
-import SignUpDemo from './SignUpDemo';
-import Footer from './Footer'
+import PitchDemo from './pitchDemo';
 import Win from './Win';
 
 const Landing = () => {
@@ -28,7 +27,6 @@ const Landing = () => {
                 <Connect />
                 <Win />
             </div>
-            <SignUpDemo />
         </>
     )
 }

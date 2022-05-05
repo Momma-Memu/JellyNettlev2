@@ -26,7 +26,7 @@ const Profile = () => {
         handleAsyncDispatch();
     }, [dispatch]);
 
-    if(!profile || !privacy || !user) return null;
+    if(!profile && !privacy && !user) return null;
 
     if((!profile || !privacy) && username === user.username) return (
         <div className='notification-form'>
@@ -41,7 +41,7 @@ const Profile = () => {
         return (
             <>
                 <div className='profile-header'>
-                    <img src={profile.photoUrl} className='profile-picture' />
+                    <img src={profile.photoUrl} alt='profile picture' className='profile-picture' />
                     <span className='profile-username'>{username}</span>
                     <span>{profile.introduction}</span>
                 </div>

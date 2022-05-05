@@ -8,12 +8,24 @@
     height: 580px;
     width: 65%;
     max-width: 550px;
-    justify-content: center;
+    justify-content: space-between;
     box-shadow: 4px 3px 3px 1px rgba(148, 148, 148, 0.308);
     border-radius: 4px;
     z-index: 20;
     transition: all;
     transition-duration: 0.5s;
+}
+
+.top-level-items{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 20px;
+    width: 100%;
+}
+
+.bottom-level-items{
+    display: flex;
+    flex-direction: column;
 }
 
 .logo-div{
@@ -49,6 +61,60 @@
 .sign-up-button:hover{
     background-color: rgba(0, 0, 0, 0.198);
     border-color: black;
+    color: black;
+    transition: all;
+    transition-duration: 0.5s;
+    cursor: pointer;
+}
+
+.login-demo-button{
+    align-self: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    background-color: rgb(142, 170, 231);
+    border-radius: 3px;
+    box-shadow: 4px 2px 4px 0px rgba(197, 197, 197, 0.527);
+    border: none;
+    color: white;
+    font-size: 15px;
+    width: 70px;
+    height: 30px;
+    transition: all;
+    transition-duration: 0.5s;
+}
+
+.login-demo-button:hover{
+    background-color: rgba(197, 197, 197, 0.335);
+    border-color: black;
+    border: solid 1px black;
+    color: black;
+    transition: all;
+    transition-duration: 0.5s;
+    cursor: pointer;
+}
+
+.sign-up-submit-button{
+    align-self: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: calc(50% - 35px);
+    background-color: rgb(142, 170, 231);
+    border-radius: 3px;
+    box-shadow: 4px 2px 4px 0px rgba(197, 197, 197, 0.527);
+    border: none;
+    color: white;
+    font-size: 15px;
+    width: 70px;
+    height: 30px;
+    transition: all;
+    transition-duration: 0.5s;
+}
+
+.sign-up-submit-button:hover{
+    background-color: rgba(197, 197, 197, 0.335);
+    border-color: black;
+    border: solid 1px black;
     color: black;
     transition: all;
     transition-duration: 0.5s;

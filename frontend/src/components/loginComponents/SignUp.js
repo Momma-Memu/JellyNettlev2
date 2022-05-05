@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { signUp } from '../../store/session';
+import { signUp, loginUser } from '../../store/session';
+
 
 const SignUp = ({props}) => {
     
@@ -12,21 +13,11 @@ const SignUp = ({props}) => {
     const [dob, setDob] = useState('');
     const dispatch = useDispatch();
     const slideRef = props.childRef;
-    const { scrollVal, position } = props;
 
     useEffect(() => {
-        if(props.position){
-
-            if(scrollVal >= 320){
-                slideRef.current.style.left = props.position;
-            }
-        }
-
-        if(props.position && scrollVal === null){
-            slideRef.current.style.left = position;
-        }
-
-    }, [slideRef, props.position, scrollVal, props])
+        // maintains consistent positioning in the center of the innerWidth values of the window.
+        slideRef.current.style.left = `calc(50% - 250px)`;
+    }, [slideRef])
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -53,8 +44,12 @@ const SignUp = ({props}) => {
                 });
         } else {
             setHeaders(formErrors);
-        };
-    };
+        }
+    }
+
+    const demoLogin = () => {
+        dispatch(loginUser('Demo-lition','password'))
+    }
 
     const updateUsername = e => setUsername(e.target.value);
     const updateEmail = e => setEmail(e.target.value);
@@ -65,24 +60,29 @@ const SignUp = ({props}) => {
 
     return (
         <form onSubmit={handleSubmit} className='sign-up-container' ref={slideRef}>
-            <div className='logo-div'></div>
-            <ul>{badSignUpMessages}</ul>
-            <label className='input-labels'> Username
-                <input type='text' value={userName} onChange={updateUsername} className='input-field'/>
-            </label>
-            <label className='input-labels'> Email
-                <input type='text' value={email} onChange={updateEmail} className='input-field'/>
-            </label>
-            <label className='input-labels'> Date of Birth
-                <input className='input-date' type='date' value={dob} onChange={e => setDob(e.target.value)}/>
-            </label>
-            <label className='input-labels'>Password
-                <input type='password' value={password} onChange={updatePassword} className='input-field'/>
-            </label>
-            <label className='input-labels'>Confirm Password
-                <input type='password' value={confirmPassword} onChange={updateConfirmPassword} className='input-field'/>
-            </label>
-            <button type='submit' className='login-button'>Sign Up</button>
+            <div className='top-level-items'>
+                <div className='logo-div'></div>
+                <button className='login-demo-button' onClick={demoLogin}>Demo</button>
+            </div>
+            <div>
+                <ul>{badSignUpMessages}</ul>
+                <label className='input-labels'> Username
+                    <input type='text' value={userName} onChange={updateUsername} className='input-field'/>
+                </label>
+                <label className='input-labels'> Email
+                    <input type='text' value={email} onChange={updateEmail} className='input-field'/>
+                </label>
+                <label className='input-labels'> Date of Birth
+                    <input className='input-date' type='date' value={dob} onChange={e => setDob(e.target.value)}/>
+                </label>
+                <label className='input-labels'>Password
+                    <input type='password' value={password} onChange={updatePassword} className='input-field'/>
+                </label>
+                <label className='input-labels'>Confirm Password
+                    <input type='password' value={confirmPassword} onChange={updateConfirmPassword} className='input-field'/>
+                </label>
+                <button type='submit' className='sign-up-submit-button'>Sign Up</button>
+            </div>
         </form>
     );
 };

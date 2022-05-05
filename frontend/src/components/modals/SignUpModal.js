@@ -2,19 +2,13 @@ import React, { useState, useRef } from 'react';
 import SignUp from '../loginComponents/SignUp';
 
 const SignUpModal = () => {
-    const width  = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     const [display, setDisplay] = useState(false);
     const modalRef = useRef();
     const childRef = useRef();
-    let position = '25%';
+    let position = `calc(50% - 250px)`;
 
     const reveal = () => {
         setDisplay(true);
-    }
-
-
-    if (width <= 750 && width > 599) {
-        position = '18%';
     }
 
     const hide = (e) => {
