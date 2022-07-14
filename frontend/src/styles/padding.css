@@ -1,3 +1,32 @@
+/*===ALL PADDING===*/
+.p-0 {
+    padding: 0px;
+}
+
+.p-1 {
+    padding: 0.25rem;
+}
+
+.p-2 {
+    padding: 0.5rem;
+}
+
+.p-3 {
+    padding: 1rem;
+}
+
+.p-4 {
+    padding: 1.5rem;
+}
+
+.p-5 {
+    padding: 2rem;
+}
+
+.p-auto {
+    padding: auto;
+}
+
 /* ===RIGHT PADDING=== */
 
 .pr-0 {

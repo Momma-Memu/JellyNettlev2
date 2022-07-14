@@ -4,8 +4,11 @@ const asyncHandler = require('express-async-handler');
 const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
 const { setTokenCookie, requireAuth, restoreUser } = require('../../utils/auth');
-const { User } = require('../../db/models');
+const { User, Profile } = require('../../db/models');
 const bcrypt = require('bcryptjs');
+const Sequelize = require('sequelize');
+const Op = Sequelize.Op;
+
 
 const validateSignup = [
     check('email')
@@ -57,11 +60,37 @@ router.put('/update/:id', asyncHandler(async (req, res) => {
 
 router.delete('/delete/:id', asyncHandler(async (req, res) => {
   const id = req.params.id;
-  console.log('============================', id)
   const user = await User.findByPk(id);
   const oldUser = await user.destroy()
 
-  res.json({ status: 'yeeted' })
-}))
+  res.json({ status: 'yeeted' });
+}));
+
+router.get('/search/:credential', restoreUser, asyncHandler(async (req, res) => {
+  const { user } = req;
+  const credential = req.params.credential;
+  let users;
+  if (isNaN(Number(credential))) {
+    users = await User.findAll({
+      where: {
+        username: {
+          [Op.like]: `%${credential}%`,
+          [Op.not]: user.username,
+        }
+      },
+      include: [{
+        model: Profile,
+       }]
+    })
+  } else {
+    users = await User.findAll({
+      where: {
+        id: credential,
+      }
+    })
+  }
+
+  res.json({ users });
+}));
 
 module.exports = router;

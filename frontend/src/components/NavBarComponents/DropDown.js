@@ -3,6 +3,7 @@ import { Link, useHistory} from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { logout } from '../../store/session';
 import { useSelector } from 'react-redux';
+import FindPeopleModal from '../modals/FindPeopleModal';
 
 const DropDown = ({props}) => {
     const profile = props;
@@ -67,6 +68,7 @@ const DropDown = ({props}) => {
                         Settings
                     <i className="fas fa-chevron-right"/>
                 </Link>
+                <FindPeopleModal />
                 <div className='drop-down-button' onClick={handleLogout}>
                     <i className="fas fa-door-open"/>
                         Logout

@@ -3,11 +3,13 @@ import thunk from 'redux-thunk';
 import session from './session';
 import profile from './profile';
 import privacy from './privacy';
+import friends from './friends';
 
 const rootReducer = combineReducers({
   session,
   profile,
   privacy,
+  friends,
 });
 
 let enhancer;

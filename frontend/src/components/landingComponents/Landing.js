@@ -4,7 +4,6 @@ import { useHistory } from 'react-router-dom'
 import Carousel from './Carousel';
 import PlanEvents from './PlanEvents';
 import Connect from './Connect';
-import PitchDemo from './pitchDemo';
 import Win from './Win';
 
 const Landing = () => {

@@ -86,3 +86,8 @@
 .fcol-rust {
     color: #6A3337;
 }
+
+/*===ALIGN TEXT===*/
+.text-align-center {
+    text-align: center;
+}
