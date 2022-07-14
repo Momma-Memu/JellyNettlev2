@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import { Link, useHistory} from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { logout } from '../../store/session';
@@ -15,11 +15,11 @@ const DropDown = ({props}) => {
         history.push('/login');
     }
 
-    const openMenu = () => {
+    const openCloseMenu = () => {
         let showing;
-        if(menuRef) {
+        if (menuRef) {
             showing = menuRef.current.style.top;
-            if(!showing || showing === '-260%'){
+            if (!showing || showing === '-260%') {
                 menuRef.current.style.top = '260%';
                 menuRef.current.style.boxShadow = '4px 3px 3px 1px rgba(148, 148, 148, 0.308)';
             } else {
@@ -29,23 +29,40 @@ const DropDown = ({props}) => {
         };   
     };
 
+    useEffect(() => {
+        // UseEffect containing the logic that closes the modal when clicking outside of it. 
+        function handleClickOutside(event) {
+            const showing = menuRef.current.style.top;
+            if (menuRef.current && !menuRef.current.contains(event.target) && showing) {
+                menuRef.current.style.top = '-260%'
+                menuRef.current.style.boxShadow = 'none';
+            }
+        }
+        // Bind the event listener
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+          // Unbind the event listener on clean up
+          document.removeEventListener("mousedown", handleClickOutside);
+        };
+      }, [menuRef]);
+
     return (
 
         <>
             <div className='drop-down-menu-container' ref={menuRef}>
                 {!profile ? 
-                <Link className='drop-down-button' to='/profile/builder' onClick={openMenu}>
+                <Link className='drop-down-button' to='/profile/builder' onClick={openCloseMenu}>
                     <i className="fas fa-tools"/>
                         Set up your profile
                     <i className="fas fa-chevron-right"/>
                 </Link> 
                 : null}
-                <Link className='drop-down-button' to={`/profile/${user.username}`} onClick={openMenu}>
+                <Link className='drop-down-button' to={`/profile/${user.username}`} onClick={openCloseMenu}>
                     <i className="fas fa-user"/>
                         Profile
                     <i className="fas fa-chevron-right"/>
                 </Link>
-                <Link className='drop-down-button' to='/settings' onClick={openMenu}>
+                <Link className='drop-down-button' to='/settings' onClick={openCloseMenu}>
                     <i className="fas fa-user-cog"/>
                         Settings
                     <i className="fas fa-chevron-right"/>
@@ -56,7 +73,7 @@ const DropDown = ({props}) => {
                     <i className="fas fa-chevron-right"/>
                 </div>
             </div>
-            <i className="fas fa-bars drop-down-icon" onClick={openMenu} />
+            <i className="fas fa-bars drop-down-icon" onClick={openCloseMenu} />
         </>
     )
 }

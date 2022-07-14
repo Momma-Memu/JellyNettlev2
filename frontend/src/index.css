@@ -1,24 +1,31 @@
 /* TODO Add site wide styles */
-@import url('./styles/login.css');
-@import url('./styles/navigation.css');
+@import url('./styles/404.css');
+@import url('./styles/buttons.css');
+@import url('./styles/carousel.css');
+@import url('./styles/connect.css');
 @import url('./styles/drop-down.css');
 @import url('./styles/drop-down-two.css');
-@import url('./styles/modal.css');
-@import url('./styles/carousel.css');
-@import url('./styles/plan-events.css');
-@import url('./styles/connect.css');
-@import url('./styles/landing.css');
-@import url('./styles/win.css');
-@import url('./styles/sign-up.css');
-@import url('./styles/404.css');
-@import url('./styles/pitch-demo.css');
 @import url('./styles/Details.css');
 @import url('./styles/footer.css');
-@import url('./styles/welcome.css');
 @import url('./styles/forms.css');
-@import url('./styles/buttons.css');
-@import url('./styles/settings.css');
+@import url('./styles/fonts.css');
+@import url('./styles/flex.css');
+@import url('./styles/height.css');
+@import url('./styles/login.css');
+@import url('./styles/landing.css');
+@import url('./styles/modal.css');
+@import url('./styles/navigation.css');
+@import url('./styles/plan-events.css');
+@import url('./styles/pitch-demo.css');
 @import url('./styles/profile.css');
+@import url('./styles/position.css');
+@import url('./styles/padding.css');
+@import url('./styles/settings.css');
+@import url('./styles/sign-up.css');
+@import url('./styles/utils.css');
+@import url('./styles/win.css');
+@import url('./styles/welcome.css');
+@import url('./styles/width.css');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 #root{

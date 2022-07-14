@@ -1,0 +1,188 @@
+/* ===POSITION TYPES=== */
+.absolute {
+    position: absolute;
+}
+
+.relative {
+    position: relative;
+}
+
+/* ===POSITION LEFT=== */
+.left-0 {
+    left: 0px;
+}
+
+.left-10 {
+    left: 10%;
+}
+
+.left-20 {
+    left: 20%;
+}
+
+.left-30 {
+    left: 30%;
+}
+
+.left-40 {
+    left: 40%;
+}
+
+.left-50 {
+    left: 50%;
+}
+
+.left-60 {
+    left: 60%;
+}
+
+.left-70 {
+    left: 70%;
+}
+
+.left-80 {
+    left: 80%;
+}
+
+.left-90 {
+    left: 90%;
+}
+
+.left-100 {
+    left: 100%;
+}
+
+/* ===POSITION RIGHT=== */
+.right-0 {
+    right: 0px;
+}
+
+.right-10 {
+    right: 10%;
+}
+
+.right-20 {
+    right: 20%;
+}
+
+.right-30 {
+    right: 30%;
+}
+
+.right-40 {
+    right: 40%;
+}
+
+.right-50 {
+    right: 50%;
+}
+
+.right-60 {
+    right: 60%;
+}
+
+.right-70 {
+    right: 70%;
+}
+
+.right-80 {
+    right: 80%;
+}
+
+.right-90 {
+    right: 90%;
+}
+
+.right-100 {
+    right: 100%;
+}
+
+/* ===POSITION TOP=== */
+.top-0 {
+    top: 0px;
+}
+
+.top-10 {
+    top: 10%;
+}
+
+.top-20 {
+    top: 20%;
+}
+
+.top-30 {
+    top: 30%;
+}
+
+.top-40 {
+    top: 40%;
+}
+
+.top-50 {
+    top: 50%;
+}
+
+.top-60 {
+    top: 60%;
+}
+
+.top-70 {
+    top: 70%;
+}
+
+.top-80 {
+    top: 80%;
+}
+
+.top-90 {
+    top: 90%;
+}
+
+.top-100 {
+    top: 100%;
+}
+
+/* ===POSITION BOTTOM=== */
+.bottom-0 {
+    bottom: 0px;
+}
+
+.bottom-10 {
+    bottom: 10%;
+}
+
+.bottom-20 {
+    bottom: 20%;
+}
+
+.bottom-30 {
+    bottom: 30%;
+}
+
+.bottom-40 {
+    bottom: 40%;
+}
+
+.bottom-50 {
+    bottom: 50%;
+}
+
+.bottom-60 {
+    bottom: 60%;
+}
+
+.bottom-70 {
+    bottom: 70%;
+}
+
+.bottom-80 {
+    bottom: 80%;
+}
+
+.bottom-90 {
+    bottom: 90%;
+}
+
+.bottom-100 {
+    bottom: 100%;
+}

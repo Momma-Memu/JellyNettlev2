@@ -1,0 +1,88 @@
+/* ===FONT SIZE=== */
+
+.fsize-1 {
+    font-size: 1rem;
+}
+
+.fsize-2 {
+    font-size: 1.25rem;
+}
+
+.fsize-3 {
+    font-size: 1.5rem;
+}
+
+.fsize-4 {
+    font-size: 1.75rem;
+}
+
+.fsize-5 {
+    font-size: 2rem;
+}
+
+.fsize-6 {
+    font-size: 2.5rem;
+}
+
+/* ===FONT WEIGHT=== */
+
+.fweight-1 {
+    font-weight: 100;
+}
+
+.fweight-2 {
+    font-weight: 200;
+}
+
+.fweight-3 {
+    font-weight: 300;
+}
+
+.fweight-4 {
+    font-weight: 400;
+}
+
+.fweight-5 {
+    font-weight: 500;
+}
+
+.fweight-6 {
+    font-weight: 600;
+}
+
+.fweight-7 {
+    font-weight: 700;
+}
+
+.fweight-8 {
+    font-weight: 800;
+}
+
+.fweight-9 {
+    font-weight: 900;
+}
+
+/* ===FONT COLOR=== */
+.fcol-white {
+    color: white;
+}
+
+.fcol-smoke-white {
+    color:#bababf;
+}
+
+.fcol-black {
+    color: black;
+}
+
+.fcol-bp {
+    color: #434A87;
+}
+
+.fcol-pp {
+    color: #774882;
+}
+
+.fcol-rust {
+    color: #6A3337;
+}

@@ -1,0 +1,38 @@
+/* ===FLEX DIRECTIONS=== */
+
+.flex-horizon {
+  display: flex;
+}
+
+.flex-vert {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===CENTERING=== */
+
+.flex-align-center {
+  align-items: center;
+}
+
+.flex-justify-center {
+  justify-content: center;
+}
+
+.flex-full-center {
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===POSITIONS=== */
+.flex-between {
+  justify-content: space-between;
+}
+
+.flex-evenly {
+  justify-content: space-evenly;
+}
+
+.flex-around {
+  justify-content: space-around;
+}

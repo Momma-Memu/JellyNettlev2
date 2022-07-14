@@ -10,7 +10,8 @@
 
 .navbar-logo{
     background-image: url('../images/logo.png');
-    background-size: 60px;
+    background-position:50% 50%;
+    background-size: cover;
     height: 58px;
     width: 58px;
     margin-left: 10px;
@@ -46,9 +47,9 @@
     background-color: rgba(197, 197, 197, 0.335);
     border: solid 1px black;
     color: black;
+    cursor: pointer;
     transition: all;
     transition-duration: 0.5s;
-    cursor: pointer;
 }
 
 .login-nav-button{
@@ -71,9 +72,9 @@
     border-color: black;
     border: solid 1px black;
     color: black;
+    cursor: pointer;
     transition: all;
     transition-duration: 0.5s;
-    cursor: pointer;
 }
 
 .sign-up-nav-button{
@@ -97,9 +98,9 @@
     border-color: black;
     border: solid 1px black;
     color: black;
+    cursor: pointer;
     transition: all;
     transition-duration: 0.5s;
-    cursor: pointer;
 }
 
 @media only screen and (max-width: 750px) {

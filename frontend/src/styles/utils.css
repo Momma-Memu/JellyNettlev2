@@ -1,0 +1,25 @@
+/* Cursors, overflow, scrollbars */
+
+.clickable {
+    cursor: pointer;
+}
+
+.cursor-default {
+    cursor: default;
+}
+
+.overflow-y-auto {
+    overflow-y: auto;
+}
+
+.overflow-y-hidden {
+    overflow-y: hidden;
+}
+
+.overflow-x-auto {
+    overflow-x: auto;
+}
+
+.overflow-x-hidden {
+    overflow-x: hidden;
+}
