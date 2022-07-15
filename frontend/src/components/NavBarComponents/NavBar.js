@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 import { getProfile } from '../../store/profile';
 import DropDown from './DropDown';
 import { getPrivacy } from '../../store/privacy'
+import { getRequests } from '../../store/friends';
 
 const NavBar = () => {
     const user = useSelector(state => state.session.user);
@@ -14,7 +15,8 @@ const NavBar = () => {
 
     useEffect(() => {
         if(user){
-            dispatch(getProfile(user.id))
+            dispatch(getProfile(user.id));
+            dispatch(getRequests(user.id));
         };
 
     },[dispatch, user])

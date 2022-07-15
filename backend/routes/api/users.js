@@ -111,4 +111,15 @@ router.post('/friend-request/:id', asyncHandler(async (req, res) => {
   res.json({addFriend});
 }));
 
+router.get('/friend-request/:id', asyncHandler(async (req, res) => {
+  const id = req.params.id;
+  const requests = await Request.findAll({
+    where: {
+      toUserId: id,
+    }
+  });
+
+  res.json({requests});
+}));
+
 module.exports = router;

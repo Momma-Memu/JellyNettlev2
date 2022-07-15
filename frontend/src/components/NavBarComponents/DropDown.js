@@ -4,11 +4,13 @@ import { useDispatch } from 'react-redux';
 import { logout } from '../../store/session';
 import { useSelector } from 'react-redux';
 import FindPeopleModal from '../modals/FindPeopleModal';
+import NotificationBell from './NotificationBell';
 
 const DropDown = ({props}) => {
     const profile = props;
     const user = useSelector(state => state.session.user)
     const menuRef = useRef();
+    const buttonRef = useRef();
     const dispatch = useDispatch();
     const history = useHistory();
     const handleLogout = () => {
@@ -18,7 +20,7 @@ const DropDown = ({props}) => {
 
     const openCloseMenu = () => {
         let showing;
-        if (menuRef ) {
+        if (menuRef) {
             showing = menuRef.current.style.top;
             if (!showing || showing === '-260%') {
                 menuRef.current.style.top = '260%';
@@ -30,11 +32,21 @@ const DropDown = ({props}) => {
         };   
     };
 
+
+    const shouldClose = (event) => {
+        return (
+            menuRef.current && 
+            buttonRef.current &&
+            !menuRef.current.contains(event.target) &&
+            !buttonRef.current.contains(event.target)
+        );
+    }
+
     useEffect(() => {
         // UseEffect containing the logic that closes the modal when clicking outside of it. 
         function handleClickOutside(event) {
             const showing = menuRef.current.style.top;
-            if (menuRef.current && !menuRef.current.contains(event.target) && showing) {
+            if (shouldClose(event)) {
                 menuRef.current.style.top = '-260%'
                 menuRef.current.style.boxShadow = 'none';
             }
@@ -48,7 +60,6 @@ const DropDown = ({props}) => {
       }, [menuRef]);
 
     return (
-
         <>
             <div className='drop-down-menu-container' ref={menuRef}>
                 {!profile ? 
@@ -75,11 +86,8 @@ const DropDown = ({props}) => {
                     <i className="fas fa-chevron-right"/>
                 </div>
             </div>
-            <div className='flex-horizon clickable'>
-                <i className="fa fa-bell-o mr-5 fcol-jn-dark fsize-3" aria-hidden="true"></i>
-                <div className='bell-icon-badge fweight-7 fcol-white fsize-0'><span>99+</span></div>
-            </div>
-            <i className="fas fa-bars drop-down-icon" onClick={openCloseMenu} />
+            <NotificationBell />
+            <i ref={buttonRef} className="fas fa-bars drop-down-icon" onClick={openCloseMenu} />
         </>
     )
 }

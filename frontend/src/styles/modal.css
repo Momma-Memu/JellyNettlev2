@@ -11,6 +11,12 @@
     align-items: center; */
 }
 
+.modal-point {
+    position: relative;
+    height: 1px;
+    width: 1px;
+}
+
 .modal-container {
     position: relative;
     bottom: -30%;
@@ -24,6 +30,19 @@
     border-radius: 4px;
     z-index: 20;
     transition: all;
+    transition-duration: 0.5s;
+}
+
+.modal-container-top {
+    position: relative;
+    z-index: 100;
+    left: -280px;
+    top: -460px;
+    height: 400px;
+    width: 220px;
+    background-color: rgb(154, 179, 231);
+    border-radius: 3px;
+    transition: top;
     transition-duration: 0.5s;
 }
 

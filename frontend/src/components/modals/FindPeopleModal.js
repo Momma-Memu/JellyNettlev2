@@ -21,7 +21,7 @@ const FindPeopleModal = ({props}) => {
 
     return (
         <>
-            <div className='drop-down-button' onClick={reveal}>
+            <div className='drop-down-button' onClick={ !display ? reveal : hide }>
                 <i className="fas fa-user-plus"></i>
                     Add Friends
                 <i className="fas fa-chevron-right"/>
