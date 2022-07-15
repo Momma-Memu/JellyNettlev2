@@ -19,10 +19,12 @@
     border: none;
     color: white;
     font-size: 15px;
-    /* width: 100px;
-    height: 30px; */
     width: 90px;
     padding: 5px 2px 5px 2px;
     transition: all;
     transition-duration: 0.5s;
+}
+
+.friend-request-sent-icon {
+    color: rgb(142, 170, 231);;
 }

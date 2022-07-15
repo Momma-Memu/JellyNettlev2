@@ -90,6 +90,8 @@ module.exports = (sequelize, DataTypes) => {
   };
   User.associate = function(models) {
     User.hasOne(models.Profile, { foreignKey: 'userId', onDelete: 'CASCADE', hooks: true });
+    User.hasMany(models.Request, { foreignKey: 'toUserId' });
+    User.belongsToMany(models.User, {as: 'friends', through: 'friend', foreignKey: 'userId', otherKey: 'friendId'});
   };
   return User;
 };

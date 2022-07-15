@@ -1,5 +1,9 @@
 /* ===FONT SIZE=== */
 
+.fsize-0 {
+    font-size: 0.75rem;
+}
+
 .fsize-1 {
     font-size: 1rem;
 }
@@ -79,12 +83,24 @@
     color: #434A87;
 }
 
+.fcol-jn {
+    color: rgb(154, 179, 231);
+}
+
+.fcol-jn-dark {
+    color: rgb(114, 138, 189);
+}
+
 .fcol-pp {
     color: #774882;
 }
 
 .fcol-rust {
     color: #6A3337;
+}
+
+.fcol-warm-red {
+    color: #b95f65;
 }
 
 /*===ALIGN TEXT===*/

@@ -15,20 +15,30 @@ export const findUsers = (credential) => async dispatch => {
     const data = await response.json();
     if(data.users){
         dispatch(setUsers(data.users));
-        console.log(data)
     } 
     return response;
-};
+}
+
+export const addFriend = (id, user) => async dispatch => {
+    const response = await csrfFetch(`/api/users/friend-request/${id}`, {
+        method: 'post',
+        body: JSON.stringify({user})
+    });
+    const data = await response.json();
+    
+    if(data.users){
+        dispatch(setUsers(data.users));
+    } 
+    return response;
+}
 
 
 
 export default function reducer(state = { userResults: [] }, action) {
     switch(action.type){
         case FIND_FRIENDS:{
-            console.log(action.payload)
             const newState = {}
             newState.userResults = action.payload;
-            console.log(newState);
             return newState;
         }   
         default:

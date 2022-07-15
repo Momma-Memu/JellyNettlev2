@@ -4,7 +4,7 @@ const asyncHandler = require('express-async-handler');
 const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
 const { setTokenCookie, requireAuth, restoreUser } = require('../../utils/auth');
-const { User, Profile } = require('../../db/models');
+const { User, Profile, Request } = require('../../db/models');
 const bcrypt = require('bcryptjs');
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
@@ -91,6 +91,24 @@ router.get('/search/:credential', restoreUser, asyncHandler(async (req, res) => 
   }
 
   res.json({ users });
+}));
+
+router.post('/friend-request/:id', asyncHandler(async (req, res) => {
+  const id = req.params.id;
+  const { user } =  req.body;
+  console.log(req.body)
+  const toUser = await User.findByPk(id);
+  console.log(toUser)
+  const newRequest = {
+    fromUserId: user.id, 
+    toUserId: id,
+    fromUsername: user.username, 
+    toUsername: toUser.username,
+  }
+
+  const addFriend = await Request.create(newRequest);
+
+  res.json({addFriend});
 }));
 
 module.exports = router;

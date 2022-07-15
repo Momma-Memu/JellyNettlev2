@@ -49,8 +49,8 @@ const FindPeople = ({props}) => {
                 { spinner ? <div className='spin'></div> : null}
             </div>
             <div className='flex-vert'>
-                { users.map((user) => (
-                    <Person props={{user}} />
+                { users.map((user, index) => (
+                    <Person key={index} props={{user}} />
                 )) }
             </div>
         </div>

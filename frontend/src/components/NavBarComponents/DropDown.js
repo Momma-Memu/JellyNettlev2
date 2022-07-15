@@ -18,7 +18,7 @@ const DropDown = ({props}) => {
 
     const openCloseMenu = () => {
         let showing;
-        if (menuRef) {
+        if (menuRef ) {
             showing = menuRef.current.style.top;
             if (!showing || showing === '-260%') {
                 menuRef.current.style.top = '260%';
@@ -74,6 +74,10 @@ const DropDown = ({props}) => {
                         Logout
                     <i className="fas fa-chevron-right"/>
                 </div>
+            </div>
+            <div className='flex-horizon clickable'>
+                <i className="fa fa-bell-o mr-5 fcol-jn-dark fsize-3" aria-hidden="true"></i>
+                <div className='bell-icon-badge fweight-7 fcol-white fsize-0'><span>99+</span></div>
             </div>
             <i className="fas fa-bars drop-down-icon" onClick={openCloseMenu} />
         </>

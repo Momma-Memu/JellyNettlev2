@@ -27,3 +27,16 @@
     display: flex;
     text-decoration: none;
 }
+
+.bell-icon-badge {
+    position: relative;
+    top: 12px;
+    right: 50%;
+    height: 28px;
+    width: 28px;
+    background-color: #b95f65;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
