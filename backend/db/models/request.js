@@ -5,6 +5,9 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
+    fromUserProfilePicture: {
+      type: DataTypes.STRING(100),
+    },
     toUserId: {
       type: DataTypes.INTEGER,
       allowNull: false,
