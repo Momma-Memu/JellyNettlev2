@@ -96,14 +96,12 @@ router.get('/search/:credential', restoreUser, asyncHandler(async (req, res) => 
 router.post('/friend-request/:id', asyncHandler(async (req, res) => {
   const id = req.params.id;
   const { user } =  req.body;
-  console.log(req.body)
-  const toUser = await User.findByPk(id);
-  console.log(toUser)
+  const fromUser = await User.findByPk(id);
   const newRequest = {
     fromUserId: user.id, 
     toUserId: id,
     fromUsername: user.username, 
-    toUsername: toUser.username,
+    toUsername: fromUser.username,
   }
 
   const addFriend = await Request.create(newRequest);

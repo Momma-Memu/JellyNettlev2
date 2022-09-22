@@ -25,8 +25,6 @@ const FindPeople = ({props}) => {
         return () => clearTimeout(delayDebounceFn)
     }, [username])
 
-    console.log(users)
-
     useEffect(() => {
         // maintains consistent positioning in the center of the innerWidth values of the window.
         childRef.current.style.left = `calc(50% - 250px)`;

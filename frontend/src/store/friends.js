@@ -29,6 +29,7 @@ export const findUsers = (credential) => async dispatch => {
 }
 
 export const addFriend = (id, user) => async dispatch => {
+    console.log(id, user)
     const response = await csrfFetch(`/api/users/friend-request/${id}`, {
         method: 'post',
         body: JSON.stringify({user})
