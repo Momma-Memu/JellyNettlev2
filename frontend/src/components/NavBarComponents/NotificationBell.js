@@ -1,10 +1,14 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 import Notifications from './Notifications';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { getNotifications } from '../../store/notifications';
 
-const NotificationBell = ({props}) => {
+const NotificationBell = ({user}) => {
+    const dispatch = useDispatch();
     const menuRef = useRef();
     const buttonRef = useRef();
+    const notifications = useSelector(state => state.notifications);
+    console.log(user)
 
     const openCloseMenu = () => {
         let showing;
@@ -31,6 +35,12 @@ const NotificationBell = ({props}) => {
     }
 
     useEffect(() => {
+        console.log(user)
+        if (user) {
+            console.log(user)
+            dispatch(getNotifications(user.id));   
+        }
+
         // UseEffect containing the logic that closes the modal when clicking outside of it. 
         function handleClickOutside(event) {
             const showing = menuRef.current.style.top;
@@ -47,11 +57,13 @@ const NotificationBell = ({props}) => {
         };
       }, [menuRef]);
 
+    const count = notifications.length > 99 ? '99+' : notifications.length;
+
     return (
         <>
             <div className='flex-horizon clickable' onClick={openCloseMenu}>
                 <i className="fa fa-bell-o mr-4 fcol-jn-dark fsize-3" ref={buttonRef} aria-hidden="true"></i>
-                <div className='bell-icon-badge fweight-7 fcol-white fsize-0'><span>99+</span></div>
+                { count > 0 ? <div className='bell-icon-badge fweight-7 fcol-white fsize-0'><span>{count}</span></div> : null }
             </div>
             <Notifications props={{menuRef}} />
         </>

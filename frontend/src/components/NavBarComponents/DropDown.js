@@ -86,7 +86,7 @@ const DropDown = ({props}) => {
                     <i className="fas fa-chevron-right"/>
                 </div>
             </div>
-            <NotificationBell />
+            <NotificationBell user={user} />
             <i ref={buttonRef} className="fas fa-bars drop-down-icon" onClick={openCloseMenu} />
         </>
     )

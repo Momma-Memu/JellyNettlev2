@@ -4,12 +4,14 @@ import session from './session';
 import profile from './profile';
 import privacy from './privacy';
 import friends from './friends';
+import notifications from './notifications';
 
 const rootReducer = combineReducers({
   session,
   profile,
   privacy,
   friends,
+  notifications,
 });
 
 let enhancer;
