@@ -65,7 +65,7 @@ const NotificationBell = ({user}) => {
                 <i className="fa fa-bell-o mr-4 fcol-jn-dark fsize-3" ref={buttonRef} aria-hidden="true"></i>
                 { count > 0 ? <div className='bell-icon-badge fweight-7 fcol-white fsize-0'><span>{count}</span></div> : null }
             </div>
-            <Notifications props={{menuRef}} />
+            <Notifications props={{menuRef, notifications}} />
         </>
     )
 }

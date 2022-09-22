@@ -12,7 +12,7 @@ export const getNotifications = (id) => async dispatch => {
     const res = await csrfFetch(`/api/notifications/${id}`)
     if(res.ok){
         const data = await res.json();
-        dispatch(setNotifications(data))
+        dispatch(setNotifications(data));
     }
 }
 
