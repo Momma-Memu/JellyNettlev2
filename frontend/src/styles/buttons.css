@@ -1,4 +1,4 @@
-.choice-button:hover{
+.choice-button:hover {
     background-color: rgba(197, 197, 197, 0.335);
     border-color: black;
     border: solid 1px black;
@@ -8,7 +8,7 @@
     cursor: pointer;
 }
 
-.choice-button{
+.choice-button {
     align-self: center;
     text-align: center;
     margin-left: 25px;
@@ -23,6 +23,32 @@
     padding: 5px 2px 5px 2px;
     transition: all;
     transition-duration: 0.5s;
+}
+
+.choice-button-light {
+    align-self: center;
+    text-align: center;
+    margin-left: 25px;
+    margin-right: 25px;
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 4px 2px 4px 0px rgba(197, 197, 197, 0.527);
+    border: none;
+    color: black;
+    font-size: 15px;
+    width: 90px;
+    padding: 5px 2px 5px 2px;
+    transition: all;
+    transition-duration: 0.5s;
+}
+
+.choice-button-light:hover {
+    background-color: rgb(211, 211, 211);
+    border-color: black;
+    color: black;
+    transition: all;
+    transition-duration: 0.3s;
+    cursor: pointer;
 }
 
 .friend-request-sent-icon {

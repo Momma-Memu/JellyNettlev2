@@ -1,3 +1,5 @@
+/* ===BORDER RADIUS=== */
+
 .radius-1 {
     border-radius: 1px;
 }
@@ -16,4 +18,36 @@
 
 .radius-5 {
     border-radius: 5px;
+}
+
+.radius-10 {
+    border-radius: 10px;
+}
+
+.radius-15 {
+    border-radius: 15px;
+}
+
+.radius-20 {
+    border-radius: 20px;
+}
+
+/* ===BORDER BOTTOM=== */
+
+.border-b-0 {
+    border-bottom: solid 1px;
+}
+
+.border-b-1 {
+    border-bottom: solid 2px;
+}
+
+.border-b-2 {
+    border-bottom: solid 3px;
+}
+
+/* ===BORDER COLOR=== */ 
+
+.border-color-w {
+    border-color: white;
 }
