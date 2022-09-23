@@ -73,12 +73,11 @@ export const logout = () => async dispatch => {
 };
 
 export const deleteUser = (id) => async dispatch => {
-    console.log(id)
-    const res = await csrfFetch(`/api/users/delete/${id}`, {
+    await csrfFetch(`/api/users/delete/${id}`, {
         method: 'DELETE',
     })
 
-    const response = await csrfFetch('/api/session', {
+    await csrfFetch('/api/session', {
         method: 'DELETE',
     });
 
@@ -118,16 +117,16 @@ export const updateUser = (data) => async dispatch => {
 export default function reducer(state = { user: null }, action) {
     switch(action.type){
         case LOGIN_USER:{
-            const newState = {}
+            const newState = {};
             newState.user = action.payload;
             return newState;
         }
         case FAILED_RESTORE:
             return state;
         case REMOVE_USER:
-            return { user: null }
+            return { user: null };
         case UPDATE_USER: {
-            const newState = {}
+            const newState = {};
             newState.user = action.payload;
             return newState;
         }

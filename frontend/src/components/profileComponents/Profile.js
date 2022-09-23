@@ -41,7 +41,7 @@ const Profile = () => {
         return (
             <>
                 <div className='profile-header'>
-                    <img src={profile.photoUrl} alt='profile picture' className='profile-picture' />
+                    <img src={profile.photoUrl} alt='profile' className='profile-picture' />
                     <span className='profile-username'>{username}</span>
                     <span>{profile.introduction}</span>
                 </div>

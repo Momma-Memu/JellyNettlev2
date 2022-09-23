@@ -4,7 +4,7 @@ const asyncHandler = require('express-async-handler');
 const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
 const { setTokenCookie, requireAuth, restoreUser } = require('../../utils/auth');
-const { User, Profile, Request } = require('../../db/models');
+const { User, Profile, Request, Friend } = require('../../db/models');
 const bcrypt = require('bcryptjs');
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
@@ -109,6 +109,15 @@ router.post('/friend-request/:id', asyncHandler(async (req, res) => {
   const addFriend = await Request.create(newRequest);
 
   res.json({addFriend});
+}));
+
+router.post('/add-friend', asyncHandler(async (req, res) => {
+  const { request } =  req.body;
+  
+  const addFriend = await Friend.create({ userId: request.toUserId, friendId: request.fromUserId });
+  const newFriend = await User.findByPk(addFriend.friendId, { include: Profile });
+
+  res.json({newFriend});
 }));
 
 router.get('/friend-request/:id', asyncHandler(async (req, res) => {

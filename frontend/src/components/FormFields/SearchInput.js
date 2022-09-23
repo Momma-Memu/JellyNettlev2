@@ -1,5 +1,3 @@
-import React, { useState, useEffect } from 'react';
-
 const SearchInput = ({props}) => {
     const { placeholder, onChange, value, type } = props;
     

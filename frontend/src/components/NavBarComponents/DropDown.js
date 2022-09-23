@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { logout } from '../../store/session';
 import { useSelector } from 'react-redux';
 import FindPeopleModal from '../modals/FindPeopleModal';
-import NotificationBell from './NotificationBell';
+import NotificationBell from './notifications/NotificationBell';
 
 const DropDown = ({props}) => {
     const profile = props;
@@ -13,6 +13,7 @@ const DropDown = ({props}) => {
     const buttonRef = useRef();
     const dispatch = useDispatch();
     const history = useHistory();
+    
     const handleLogout = () => {
         dispatch(logout());
         history.push('/login');
@@ -45,7 +46,6 @@ const DropDown = ({props}) => {
     useEffect(() => {
         // UseEffect containing the logic that closes the modal when clicking outside of it. 
         function handleClickOutside(event) {
-            const showing = menuRef.current.style.top;
             if (shouldClose(event)) {
                 menuRef.current.style.top = '-260%'
                 menuRef.current.style.boxShadow = 'none';

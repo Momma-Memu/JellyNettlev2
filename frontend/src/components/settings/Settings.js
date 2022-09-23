@@ -9,7 +9,7 @@ import Current from './Current';
 
 const Settings = () => {
     const [currentSettings, setCurrentSettings] = useState('general');
-    const user = useSelector(state => state.session.user);
+    // const user = useSelector(state => state.session.user);
     const profile = useSelector(state => state.profile);
     const privacy = useSelector(state => state.privacy);
 

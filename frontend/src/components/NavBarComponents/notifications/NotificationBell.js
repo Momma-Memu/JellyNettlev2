@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import Notifications from './Notifications';
 import { useSelector, useDispatch } from 'react-redux';
-import { getNotifications } from '../../store/notifications';
+import { getNotifications } from '../../../store/notifications';
 
 const NotificationBell = ({user}) => {
     const dispatch = useDispatch();
@@ -43,7 +43,6 @@ const NotificationBell = ({user}) => {
 
         // UseEffect containing the logic that closes the modal when clicking outside of it. 
         function handleClickOutside(event) {
-            const showing = menuRef.current.style.top;
             if (shouldClose(event)) {
                 menuRef.current.style.top = '-460px'
                 menuRef.current.style.boxShadow = 'none';

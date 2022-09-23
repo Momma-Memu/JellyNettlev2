@@ -1,12 +1,9 @@
-import LoginModal from '../modals/LoginModal';
 import { useSelector, useDispatch } from 'react-redux';
-import SignUpModal from '../modals/SignUpModal';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import { getProfile } from '../../store/profile';
 import DropDown from './DropDown';
 import { getPrivacy } from '../../store/privacy'
-import { getRequests } from '../../store/friends';
 import Modal from '../modals/Modal';
 import Login from '../loginComponents/Login';
 import SignUp from '../loginComponents/SignUp';
@@ -19,7 +16,6 @@ const NavBar = () => {
     useEffect(() => {
         if(user){
             dispatch(getProfile(user.id));
-            dispatch(getRequests(user.id));
         };
 
     },[dispatch, user])

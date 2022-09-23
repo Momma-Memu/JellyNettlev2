@@ -17,10 +17,10 @@ router.use('/notifications', notificationsRouter);
 
 router.get('/set-token-cookie', asyncHandler(async (req, res) => {
   const user = await User.findOne({
-      where: {
-        username: 'Demo-lition'
-      },
-    })
+    where: {
+      username: 'Demo-lition'
+    },
+  })
   setTokenCookie(res, user);
   return res.json({ user });
 }));
