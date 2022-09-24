@@ -61,7 +61,7 @@ router.put('/update/:id', asyncHandler(async (req, res) => {
 router.delete('/delete/:id', asyncHandler(async (req, res) => {
   const id = req.params.id;
   const user = await User.findByPk(id);
-  const oldUser = await user.destroy()
+  await user.destroy();
 
   res.json({ status: 'yeeted' });
 }));
@@ -70,13 +70,21 @@ router.get('/search/:credential', restoreUser, asyncHandler(async (req, res) => 
   const { user } = req;
   const credential = req.params.credential;
   let users;
+
+  // Grab list of friends to filter out of search results.
+  const friends = await Friend.findAll({ where: { userId: user.id } });
+  const friendIds = friends.map((friend) => friend.friendId);
+
   if (isNaN(Number(credential))) {
     users = await User.findAll({
       where: {
         username: {
           [Op.like]: `%${credential}%`,
           [Op.not]: user.username,
-        }
+        },
+        id: {
+          [Op.notIn]: friendIds,
+        } 
       },
       include: [{
         model: Profile,

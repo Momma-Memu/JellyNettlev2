@@ -17,7 +17,7 @@ const Person = ({props}) => {
 
     return (
         <div className="flex-horizon flex-align-center mt-2">
-            { user.Profile ? <img src={user.Profile.photoUrl} alt='profile' className='profile-picture-result ml-5 mr-2' /> : 
+            { user.Profile && user.Profile.photoUrl ? <img src={user.Profile.photoUrl} alt='profile' className='profile-picture-result ml-5 mr-2' /> : 
             <i className="fa fa-user default-user-icon ml-5 mr-2" aria-hidden="true"></i> }
             <div>{user.username}</div>
             { !userAdded ? <div className="choice-button ml-auto" onClick={sendFriendRequest}>Add Friend</div> : 

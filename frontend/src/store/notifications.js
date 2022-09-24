@@ -31,7 +31,6 @@ export default function reducer(state = [], action) {
         }
 
         case REMOVE_NOTIFICATION: {
-            console.log('hi', action)
             return state.filter(notification => {
                 return notification !== action.payload;
             });
