@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import { addFriend } from "../../../store/friends";
+import { removeNotification } from "../../../store/notifications";
 
 const FriendRequest = ({props}) => {
     const request = props.request;
@@ -7,7 +8,8 @@ const FriendRequest = ({props}) => {
     const dispatch = useDispatch();
 
     const addNewFriend = (request) => {
-        dispatch(addFriend(request))
+        // dispatch(addFriend(request));
+        dispatch(removeNotification(request));
     }
 
     return (

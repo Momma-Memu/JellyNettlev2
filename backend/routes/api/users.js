@@ -113,7 +113,8 @@ router.post('/friend-request/:id', asyncHandler(async (req, res) => {
 
 router.post('/add-friend', asyncHandler(async (req, res) => {
   const { request } =  req.body;
-  
+  const oldRequest = await Request.findByPk(request.id);
+  await oldRequest.destroy();
   const addFriend = await Friend.create({ userId: request.toUserId, friendId: request.fromUserId });
   const newFriend = await User.findByPk(addFriend.friendId, { include: Profile });
 
