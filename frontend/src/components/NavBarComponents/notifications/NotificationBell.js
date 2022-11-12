@@ -8,7 +8,6 @@ const NotificationBell = ({user}) => {
     const menuRef = useRef();
     const buttonRef = useRef();
     const notifications = useSelector(state => state.notifications);
-    console.log(user)
 
     const openCloseMenu = () => {
         let showing;
@@ -35,9 +34,7 @@ const NotificationBell = ({user}) => {
     }
 
     useEffect(() => {
-        console.log(user)
         if (user) {
-            console.log(user)
             dispatch(getNotifications(user.id));   
         }
 

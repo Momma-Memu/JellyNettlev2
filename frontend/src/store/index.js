@@ -5,6 +5,7 @@ import profile from './profile';
 import privacy from './privacy';
 import friends from './friends';
 import notifications from './notifications';
+import viewingUser from './viewingUser';
 
 const rootReducer = combineReducers({
   session,
@@ -12,6 +13,7 @@ const rootReducer = combineReducers({
   privacy,
   friends,
   notifications,
+  viewingUser,
 });
 
 let enhancer;

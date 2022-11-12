@@ -21,7 +21,7 @@ const Person = ({props}) => {
             <i className="fa fa-user default-user-icon ml-5 mr-2" aria-hidden="true"></i> }
             <div>{user.username}</div>
             { !userAdded ? <div className="choice-button ml-auto" onClick={sendFriendRequest}>Add Friend</div> : 
-            <i className="fa fa-check friend-request-sent-icon ml-auto mr-5" aria-hidden="true"></i>}
+            <><span className='ml-auto mr-2 fsize-0'>Request Sent</span><i className="fa fa-check friend-request-sent-icon mr-5" aria-hidden="true"></i></>}
         </div>
     )
 }

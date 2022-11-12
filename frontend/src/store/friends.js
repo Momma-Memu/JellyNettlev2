@@ -1,11 +1,13 @@
 import { csrfFetch } from './csrf';
 
-const FIND_FRIENDS = 'FIND_FRIENDS';
+const FIND_PEOPLE = 'FIND_PEOPLE';
+const GET_FRIENDS = 'GET_FRIENDS';
+const GET_REQUESTS = 'GET_REQUESTS';
 const ACCEPT_REQUEST = 'ACCEPT_REQUEST';
 
 const setUsers = (users) => {
     return {
-        type: FIND_FRIENDS,
+        type: FIND_PEOPLE,
         payload: users
     }
 }
@@ -40,9 +42,21 @@ export const addFriend = (request) => async dispatch => {
 
 export default function reducer(state = [], action) {
     switch(action.type) {
-        case FIND_FRIENDS: {
+        case FIND_PEOPLE: {
             const newState = {}
             newState.userResults = action.payload;
+            return newState;
+        }
+
+        case GET_FRIENDS: {
+            const newState = { ...state };
+            newState.friends = action.payload;
+            return newState;
+        }
+
+        case GET_REQUESTS: {
+            const newState = { ...state };
+            newState.requests = action.payload;
             return newState;
         }
 
